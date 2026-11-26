@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Collections | Alpha Tribe Premium Menswear</title>
+  <meta name="description" content="Explore our complete catalog of precision-cut casual shirts, Japanese selvedge denim, luxury Supima polos, and Egyptian cotton formals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .collections-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .filter-panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      position: sticky;
+      top: 96px;
+    }
+    .filter-group {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .filter-group:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .filter-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .filter-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--muted);
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .filter-checkbox:hover {
+      color: var(--text);
+    }
+    .filter-checkbox input {
+      accent-color: var(--gold);
+      width: 16px;
+      height: 16px;
+    }
+    .sort-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .collections-layout {
+        grid-template-columns: 1fr;
+      }
+      .filter-panel {
+        display: none;
+      }
+      .filter-panel.mobile-active {
+        display: block;
+        position: fixed;
+        inset: 20px;
+        z-index: 400;
+        overflow-y: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="wrap">
+      <div>✦ Complimentary Pan-India Delivery on orders above ₹1,999 | Use Code <strong>FIRSTALPHA</strong> for 15% Off</div>
+      <div class="top-bar-links">
+        <a href="shipping.html">Track Order</a>
+        <a href="contact.html">Store Locator</a>
+        <span>INR (₹)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Header -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <button class="action-btn menu-toggle" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          ALPHA TRIBE
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html" class="active">Collections</a></li>
+          <li><a href="looks.html">Style Guide</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-trigger-btn" aria-label="Search Garments">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          
+          <button class="action-btn" onclick="filterByWishlistOnly()" title="Wishlist" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="action-badge wishlist-badge-count" style="display:none;">0</span>
+          </button>
+
+          <button class="action-btn" onclick="openCartDrawer()" aria-label="View Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="action-badge cart-badge-count" style="display:none;">0</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 48px 0 88px;">
+    <div class="wrap">
+      <!-- Breadcrumb & Header -->
+      <div style="font-size:12.5px; color:var(--muted); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em;">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <span style="color:var(--gold)">Collections</span>
+      </div>
+      <h1 style="font-size:clamp(36px, 5vw, 60px); margin-bottom:12px;" id="collection-page-title">The Complete Catalog</h1>
+      <p style="color:var(--muted); max-width:680px; margin-bottom:36px; font-size:16px;">
+        Engineered for the Indian male silhouette. Discover masterfully tailored casual shirts, selvedge denim, luxury knit polos and executive two-ply Egyptian cotton shirts.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="cat-tabs" id="category-tabs">
+        <button class="cat-tab active" data-category="all" onclick="selectCategory('all', this)">All Styles</button>
+        <button class="cat-tab" data-category="casual-shirts" onclick="selectCategory('casual-shirts', this)">Casual Shirts</button>
+        <button class="cat-tab" data-category="denim-jeans" onclick="selectCategory('denim-jeans', this)">Denim Jeans</button>
+        <button class="cat-tab" data-category="polo-t-shirts" onclick="selectCategory('polo-t-shirts', this)">Polo T-Shirts</button>
+        <button class="cat-tab" data-category="formal-shirts" onclick="selectCategory('formal-shirts', this)">Formal Shirts</button>
+        <button class="cat-tab" data-category="round-neck-t-shirts" onclick="selectCategory('round-neck-t-shirts', this)">Round Neck Tees</button>
+      </div>
+
+      <!-- Main Layout -->
+      <div class="collections-layout">
+        <!-- Sidebar Filter Panel -->
+        <aside class="filter-panel" id="filter-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h3 style="font-size:18px; font-family:var(--serif); margin:0;">Filter By</h3>
+            <button onclick="resetFilters()" style="background:transparent; border:none; color:var(--gold); font-size:12px; cursor:pointer; text-decoration:underline;">Reset All</button>
+          </div>
+
+          <!-- Price Range Filter -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Max Price</span>
+              <span id="price-readout" style="color:var(--gold); font-size:14px; font-family:var(--sans);">₹3,000</span>
+            </div>
+            <input type="range" id="price-slider" min="500" max="3000" step="100" value="3000" style="width:100%; accent-color:var(--gold); cursor:pointer;" oninput="onPriceSliderChange(this.value)">
+            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:6px;">
+              <span>₹500</span>
+              <span>₹3,000</span>
+            </div>
+          </div>
+
+          <!-- Size Filter -->
+          <div class="filter-group">
+            <div class="filter-title">Sizes Available</div>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;" id="size-filters">
+              <button class="size-pill filter-size-pill" onclick="toggleSizeFilter('S', this)">S</button>
+              <button class="size-pill filter-size-pill" onclick="toggleSizeFilter('M', this)">M</button>
+              <button class="size-pill filter-size-pill" onclick="toggleSizeFilter('L', this)">L</button>
+              <button class="size-pill filter-size-pill" onclick="toggleSizeFilter('XL', this)">XL</button>
+              <button class="size-pill filter-size-pill" onclick="toggleSizeFilter('XXL', this)">XXL</button>
+              <button class="size-pill filter-size-pill" onclick="toggleSizeFilter('32', this)">32</button>
+              <button class="size-pill filter-size-pill" onclick="toggleSizeFilter('34', this)">34</button>
+            </div>
+          </div>
+
+          <!-- Badges Filter -->
+          <div class="filter-group">
+            <div class="filter-title">Highlights</div>
+            <label class="filter-checkbox">
+              <input type="checkbox" id="filter-bestseller" onchange="applyFilters()">
+              <span>Bestsellers Only</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" id="filter-new" onchange="applyFilters()">
+              <span>New Arrivals</span>
+            </label>
+          </div>
+
+          <!-- Indian Fit Guarantee -->
+          <div style="background:var(--bg); border:1px solid var(--line); padding:16px; border-radius:var(--radius-sm); margin-top:20px;">
+            <div style="font-size:13px; font-weight:600; color:var(--gold); margin-bottom:4px;">✦ Tailored for India</div>
+            <p style="font-size:12px; color:var(--muted); margin:0;">Zero armhole bunching, broader shoulder drape, premium pre-washed fabrics.</p>
+          </div>
+        </aside>
+
+        <!-- Product Catalog Section -->
+        <div>
+          <!-- Sort & Product Count Bar -->
+          <div class="sort-bar">
+            <div style="color:var(--muted); font-size:14px;">
+              Showing <strong id="products-count" style="color:var(--text)">0</strong> styles
+            </div>
+
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:13.5px; color:var(--muted)">Sort By:</span>
+              <select id="sort-select" class="form-select" style="width:auto; padding:8px 14px; font-size:13px;" onchange="applyFilters()">
+                <option value="featured">Featured & Curated</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
+                <option value="name">Alphabetical (A-Z)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Products Grid Container -->
+          <div class="grid" id="catalog-grid">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Empty State -->
+          <div id="catalog-empty" style="display:none; text-align:center; padding:80px 20px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm);">
+            <div style="font-size:48px; color:var(--gold); margin-bottom:12px;">🔍</div>
+            <h3 style="font-size:24px; margin-bottom:8px;">No garments match your filters</h3>
+            <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">Try adjusting your price range or clearing selected sizes.</p>
+            <button class="btn" onclick="resetFilters()">Reset All Filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div>
+          <a class="logo" href="index.html" style="margin-bottom:14px;">
+            <span class="logo-mark"></span>
+            ALPHA TRIBE
+          </a>
+          <p style="color:var(--muted); font-size:13.5px; line-height:1.7;">
+            Wear your Alpha. Luxury menswear engineered for the modern Indian gentleman who moves with quiet purpose.
+          </p>
+          <div class="f-badge">PAN-INDIA 2-4 DAYS EXPRESS</div>
+        </div>
+
+        <div>
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="collections.html?cat=casual-shirts">Casual Shirts</a></li>
+            <li><a href="collections.html?cat=denim-jeans">Denim Jeans</a></li>
+            <li><a href="collections.html?cat=polo-t-shirts">Polo T-Shirts</a></li>
+            <li><a href="collections.html?cat=formal-shirts">Formal Shirts</a></li>
+            <li><a href="collections.html?cat=round-neck-t-shirts">Round Neck Tees</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>The House</h4>
+          <ul>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="looks.html">Style Guide</a></li>
+            <li><a href="contact.html">Flagship Studios</a></li>
+            <li><a href="about.html#craft">Craftsmanship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Client Concierge</h4>
+          <ul>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="returns.html">7-Day Returns & Exchanges</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Stay Connected</h4>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">Sign up for private releases & VIP invites.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button class="btn btn-sm" type="submit">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="copy">
+        <div>© 2026 Alpha Tribe Menswear Private Limited. All Rights Reserved.</div>
+        <div class="copy-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping.html">Logistics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let activeCategory = 'all';
+    let maxPrice = 3000;
+    let selectedSizes = [];
+    let showWishlistOnly = false;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check URL query param e.g. collections.html?cat=denim-jeans
+      const params = new URLSearchParams(window.location.search);
+      const catParam = params.get('cat');
+      if (catParam) {
+        activeCategory = catParam;
+        document.querySelectorAll('.cat-tab').forEach(tab => {
+          if (tab.getAttribute('data-category') === catParam) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        });
+      }
+
+      applyFilters();
+    });
+
+    function selectCategory(cat, btn) {
+      activeCategory = cat;
+      showWishlistOnly = false;
+      document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const titleEl = document.getElementById('collection-page-title');
+      if (cat === 'all') titleEl.textContent = 'The Complete Catalog';
+      else if (cat === 'casual-shirts') titleEl.textContent = 'Casual Twill & Linen Shirts';
+      else if (cat === 'denim-jeans') titleEl.textContent = 'Japanese & Ring-Spun Denim';
+      else if (cat === 'polo-t-shirts') titleEl.textContent = 'Mercerized Supima Polos';
+      else if (cat === 'formal-shirts') titleEl.textContent = 'Two-Ply Egyptian Cotton Formals';
+      else if (cat === 'round-neck-t-shirts') titleEl.textContent = '240 GSM Heavyweight Tees';
+
+      applyFilters();
+    }
+
+    function onPriceSliderChange(val) {
+      maxPrice = Number(val);
+      document.getElementById('price-readout').textContent = formatINR(maxPrice);
+      applyFilters();
+    }
+
+    function toggleSizeFilter(size, btn) {
+      const idx = selectedSizes.indexOf(size);
+      if (idx > -1) {
+        selectedSizes.splice(idx, 1);
+        btn.classList.remove('active');
+      } else {
+        selectedSizes.push(size);
+        btn.classList.add('active');
+      }
+      applyFilters();
+    }
+
+    function filterByWishlistOnly() {
+      showWishlistOnly = !showWishlistOnly;
+      if (showWishlistOnly) {
+        showToast('Displaying Wishlisted Items');
+        document.getElementById('collection-page-title').textContent = 'Your Saved Garments';
+      } else {
+        document.getElementById('collection-page-title').textContent = 'The Complete Catalog';
+      }
+      applyFilters();
+    }
+
+    function resetFilters() {
+      activeCategory = 'all';
+      maxPrice = 3000;
+      selectedSizes = [];
+      showWishlistOnly = false;
+
+      document.getElementById('price-slider').value = 3000;
+      document.getElementById('price-readout').textContent = formatINR(3000);
+      document.getElementById('filter-bestseller').checked = false;
+      document.getElementById('filter-new').checked = false;
+      document.querySelectorAll('.cat-tab').forEach((b, i) => b.classList.toggle('active', i === 0));
+      document.querySelectorAll('.filter-size-pill').forEach(b => b.classList.remove('active'));
+      document.getElementById('sort-select').value = 'featured';
+
+      applyFilters();
+    }
+
+    function applyFilters() {
+      let list = getAllProducts();
+
+      // Category filter
+      if (activeCategory !== 'all') {
+        list = list.filter(p => p.categorySlug === activeCategory);
+      }
+
+      // Wishlist filter
+      if (showWishlistOnly) {
+        const wishlist = getWishlist();
+        list = list.filter(p => wishlist.includes(p.id));
+      }
+
+      // Price filter
+      list = list.filter(p => p.price <= maxPrice);
+
+      // Sizes filter
+      if (selectedSizes.length > 0) {
+        list = list.filter(p => p.sizes.some(s => selectedSizes.some(sel => s.includes(sel))));
+      }
+
+      // Checkbox highlights
+      const onlyBestseller = document.getElementById('filter-bestseller')?.checked;
+      const onlyNew = document.getElementById('filter-new')?.checked;
+      if (onlyBestseller) list = list.filter(p => p.badge && p.badge.toLowerCase().includes('bestseller'));
+      if (onlyNew) list = list.filter(p => p.badge && p.badge.toLowerCase().includes('new'));
+
+      // Sorting
+      const sort = document.getElementById('sort-select')?.value || 'featured';
+      if (sort === 'price-low') {
+        list.sort((a, b) => a.price - b.price);
+      } else if (sort === 'price-high') {
+        list.sort((a, b) => b.price - a.price);
+      } else if (sort === 'rating') {
+        list.sort((a, b) => b.rating - a.rating);
+      } else if (sort === 'name') {
+        list.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      // Render
+      renderCatalog(list);
+    }
+
+    function renderCatalog(items) {
+      const grid = document.getElementById('catalog-grid');
+      const countEl = document.getElementById('products-count');
+      const emptyEl = document.getElementById('catalog-empty');
+
+      countEl.textContent = items.length;
+
+      if (items.length === 0) {
+        grid.style.display = 'none';
+        emptyEl.style.display = 'block';
+        return;
+      }
+
+      grid.style.display = 'grid';
+      emptyEl.style.display = 'none';
+
+      grid.innerHTML = items.map(p => `
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
+            ${p.badge ? `<span class="card-badge">${p.badge}</span>` : ''}
+            <button class="wishlist-btn" data-product-id="${p.id}" onclick="toggleWishlist('${p.id}', this)" aria-label="Save to Wishlist">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="card-quick-actions">
+              <button class="btn btn-sm btn-full" onclick="openQuickView('${p.id}')">Quick View</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="card-cat">${p.category}</div>
+            <h3 class="card-title"><a href="product.html?id=${p.id}">${p.name}</a></h3>
+            <div class="card-rating">
+              <span class="stars">★★★★★</span>
+              <span>${p.rating} (${p.reviewsCount})</span>
+            </div>
+            <div class="card-bottom">
+              <div class="price-box">
+                <span class="price">${formatINR(p.price)}</span>
+                <span class="price-orig">${formatINR(p.originalPrice)}</span>
+              </div>
+              <button class="btn btn-sm" onclick="addToCart('${p.id}', '${p.sizes[0]}')">Add</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      if (typeof updateWishlistButtons === 'function') updateWishlistButtons();
+    }
+  </script>
+</body>
+</html>

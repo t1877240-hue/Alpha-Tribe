@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pan-India Shipping & Logistics | Alpha Tribe Menswear</title>
+  <meta name="description" content="Detailed transit times, courier network partners, tracking instructions, and packaging standards for Alpha Tribe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .shipping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 28px 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .shipping-table th, .shipping-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+      text-align: left;
+    }
+    .shipping-table th {
+      background: #0d0c0b;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 17px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="wrap">
+      <div>✦ Complimentary Pan-India Delivery on orders above ₹1,999 | Use Code <strong>FIRSTALPHA</strong> for 15% Off</div>
+      <div class="top-bar-links">
+        <a href="shipping.html">Track Order</a>
+        <a href="contact.html">Store Locator</a>
+        <span>INR (₹)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Header -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <button class="action-btn menu-toggle" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          ALPHA TRIBE
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="looks.html">Style Guide</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-trigger-btn" aria-label="Search Garments">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          
+          <a class="action-btn" href="collections.html" title="Wishlist" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="action-badge wishlist-badge-count" style="display:none;">0</span>
+          </a>
+
+          <button class="action-btn" onclick="openCartDrawer()" aria-label="View Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="action-badge cart-badge-count" style="display:none;">0</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 48px 0 88px;">
+    <div class="wrap">
+      <!-- Breadcrumb & Header -->
+      <div style="font-size:12.5px; color:var(--muted); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.04em;">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <span style="color:var(--gold)">Logistics & Shipping</span>
+      </div>
+      <h1 style="font-size:clamp(36px, 5vw, 60px); margin-bottom:14px;">Pan-India Delivery Network</h1>
+      <p style="color:var(--muted); font-size:17px; max-width:680px; margin-bottom:48px;">
+        Every Alpha Tribe order is individually inspected by master tailors, wrapped in archival tissue, and dispatched via high-priority air express couriers.
+      </p>
+
+      <!-- Live Order Tracker Box -->
+      <div style="background:var(--surface); border:1px solid var(--gold); border-radius:var(--radius-sm); padding:32px; max-width:680px; margin-bottom:48px;">
+        <span class="tag">Real-Time Dispatch Radar</span>
+        <h2 style="font-size:24px; margin:6px 0 12px;">Track Any Order</h2>
+        <div style="display:flex; gap:10px;">
+          <input type="text" id="track-id-input" class="form-input" placeholder="Enter Order ID (e.g. AT-849201)" value="AT-849201">
+          <button class="btn btn-sm" onclick="trackOrderSim()">Track Status</button>
+        </div>
+        <div id="track-result" style="margin-top:16px; font-size:13.5px; display:none; background:#0d0c0b; border:1px solid var(--line); padding:16px; border-radius:var(--radius-sm);">
+          <div style="color:var(--gold); font-weight:600; margin-bottom:4px;">✦ Status: In Transit via Bluedart Air Cargo (AWB #849281920)</div>
+          <div style="color:var(--muted);">Current Location: Mumbai Airport Hub → Scheduled delivery in 48 hours.</div>
+        </div>
+      </div>
+
+      <!-- Timetable -->
+      <h2 style="font-size:32px; margin-bottom:12px;">Transit Timelines by Region</h2>
+      <table class="shipping-table">
+        <thead>
+          <tr>
+            <th>Zone / Region</th>
+            <th>Primary Cities</th>
+            <th>Carrier Partner</th>
+            <th>Expected Timeline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tier 1 Metros</strong></td>
+            <td>Mumbai, Delhi NCR, Bengaluru, Hyderabad, Chennai, Kolkata, Pune</td>
+            <td>Bluedart Air / Smartr Priority</td>
+            <td><strong style="color:var(--gold);">2–3 Business Days</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Tier 2 Hubs</strong></td>
+            <td>Ahmedabad, Jaipur, Chandigarh, Lucknow, Indore, Surat, Kochi, Coimbatore</td>
+            <td>Delhivery Express / DTDC Air</td>
+            <td><strong>3–4 Business Days</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Tier 3 & Towns</strong></td>
+            <td>All serviceable Indian district headquarters & PIN codes</td>
+            <td>India Post Speed Post / Delhivery</td>
+            <td><strong>4–6 Business Days</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Special Terrains</strong></td>
+            <td>Assam, Meghalaya, Jammu & Kashmir, Ladakh, Andaman & Nicobar</td>
+            <td>Bluedart Air Special Fleet</td>
+            <td><strong>5–7 Business Days</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Luxury Packaging Commitment -->
+      <div style="background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm); padding:40px; margin-top:48px;">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:40px; align-items:center;">
+          <div>
+            <span class="tag">Unboxing Excellence</span>
+            <h2 style="font-size:32px; margin:8px 0 16px;">The Royal Presentation Box</h2>
+            <p style="color:var(--muted); line-height:1.7;">
+              Your garments do not arrive in cheap plastic polybags. Each order arrives in our signature rigid matte black presentation box, sealed with our gold wax crest and accompanied by a personalized tailor certification card.
+            </p>
+          </div>
+          <div style="background:#0d0c0b; border:1px solid var(--line); padding:24px; border-radius:var(--radius-sm);">
+            <ul style="list-style:none; display:grid; gap:12px; font-size:13.5px; color:var(--text);">
+              <li>✦ 100% Recyclable FSC-Certified Rigid Carton</li>
+              <li>✦ Breathable Anti-Dust Cotton Garment Sleeves</li>
+              <li>✦ Complimentary Cedar Wood Closet Hanger on Formals</li>
+              <li>✦ Tamper-Evident Security Seal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div>
+          <a class="logo" href="index.html" style="margin-bottom:14px;">
+            <span class="logo-mark"></span>
+            ALPHA TRIBE
+          </a>
+          <p style="color:var(--muted); font-size:13.5px; line-height:1.7;">
+            Wear your Alpha. Luxury menswear engineered for the modern Indian gentleman who moves with quiet purpose.
+          </p>
+          <div class="f-badge">PAN-INDIA 2-4 DAYS EXPRESS</div>
+        </div>
+
+        <div>
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="collections.html?cat=casual-shirts">Casual Shirts</a></li>
+            <li><a href="collections.html?cat=denim-jeans">Denim Jeans</a></li>
+            <li><a href="collections.html?cat=polo-t-shirts">Polo T-Shirts</a></li>
+            <li><a href="collections.html?cat=formal-shirts">Formal Shirts</a></li>
+            <li><a href="collections.html?cat=round-neck-t-shirts">Round Neck Tees</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>The House</h4>
+          <ul>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="looks.html">Style Guide</a></li>
+            <li><a href="contact.html">Flagship Studios</a></li>
+            <li><a href="about.html#craft">Craftsmanship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Client Concierge</h4>
+          <ul>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="returns.html">7-Day Returns & Exchanges</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Stay Connected</h4>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">Sign up for private releases & VIP invites.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button class="btn btn-sm" type="submit">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="copy">
+        <div>© 2026 Alpha Tribe Menswear Private Limited. All Rights Reserved.</div>
+        <div class="copy-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping.html">Logistics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function trackOrderSim() {
+      const val = document.getElementById('track-id-input').value.trim();
+      const res = document.getElementById('track-result');
+      if (!val) {
+        showToast('Please enter a valid Order ID.');
+        return;
+      }
+      res.style.display = 'block';
+      showToast(`Tracking status retrieved for <strong>${val}</strong>`);
+    }
+  </script>
+</body>
+</html>

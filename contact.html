@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact & Flagship Studios | Alpha Tribe Menswear</title>
+  <meta name="description" content="Reach the Alpha Tribe customer concierge or visit our flagship experience studios in Mumbai, Bengaluru, and New Delhi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .studio-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+    .studio-card:hover {
+      border-color: var(--gold);
+    }
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="wrap">
+      <div>✦ Complimentary Pan-India Delivery on orders above ₹1,999 | Use Code <strong>FIRSTALPHA</strong> for 15% Off</div>
+      <div class="top-bar-links">
+        <a href="shipping.html">Track Order</a>
+        <a href="contact.html">Store Locator</a>
+        <span>INR (₹)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Header -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <button class="action-btn menu-toggle" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          ALPHA TRIBE
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="looks.html">Style Guide</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-trigger-btn" aria-label="Search Garments">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          
+          <a class="action-btn" href="collections.html" title="Wishlist" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="action-badge wishlist-badge-count" style="display:none;">0</span>
+          </a>
+
+          <button class="action-btn" onclick="openCartDrawer()" aria-label="View Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="action-badge cart-badge-count" style="display:none;">0</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 48px 0 88px;">
+    <div class="wrap">
+      <!-- Breadcrumb & Header -->
+      <div style="font-size:12.5px; color:var(--muted); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.04em;">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <span style="color:var(--gold)">Client Concierge</span>
+      </div>
+      <h1 style="font-size:clamp(36px, 5vw, 60px); margin-bottom:12px;">At Your Service</h1>
+      <p style="color:var(--muted); font-size:17px; max-width:680px; margin-bottom:48px;">
+        Whether you require styling guidance, size consultation, or order assistance, our dedicated concierge team is at your command.
+      </p>
+
+      <div class="contact-layout">
+        <!-- Message Form -->
+        <div style="background:var(--surface); border:1px solid var(--line); padding:36px; border-radius:var(--radius-sm);">
+          <span class="tag">Direct Dispatch</span>
+          <h2 style="font-size:28px; margin:4px 0 20px;">Send a Message</h2>
+
+          <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-row">
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Full Name *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Email Address *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" id="contact-phone" class="form-input" placeholder="10-digit mobile number">
+              </div>
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Topic *</label>
+                <select class="form-select" id="contact-topic" required>
+                  <option value="sizing">Size Consultation & Sizing Advice</option>
+                  <option value="order">Order Tracking & Shipping Inquiry</option>
+                  <option value="returns">7-Day Doorstep Exchange/Return</option>
+                  <option value="bespoke">Bespoke Fitting Studio Appointment</option>
+                  <option value="corporate">Corporate & Bulk Gifting</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message *</label>
+              <textarea class="form-textarea" id="contact-msg" rows="5" placeholder="How may we assist you today?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-full btn-lg" id="contact-submit-btn">
+              Dispatch Message to Concierge
+            </button>
+          </form>
+        </div>
+
+        <!-- Studios & Direct Contact -->
+        <div>
+          <!-- Hotline Banner -->
+          <div style="background:#0e0d0b; border:1px solid var(--gold); padding:24px; border-radius:var(--radius-sm); margin-bottom:32px;">
+            <span class="tag">Priority Concierge Line</span>
+            <div style="font-size:24px; font-weight:700; color:var(--text); margin:6px 0;">
+              <a href="tel:+918000456789" style="color:var(--gold);">+91 (800) 045-6789</a>
+            </div>
+            <p style="color:var(--muted); font-size:13px; margin-bottom:12px;">Available Monday to Saturday · 10:00 AM – 8:00 PM IST</p>
+            <div style="display:flex; gap:12px;">
+              <a href="https://wa.me/918000456789" target="_blank" class="btn btn-sm" style="background:#25D366; border-color:#25D366; color:#000;">
+                WhatsApp Concierge
+              </a>
+              <a href="mailto:concierge@alphatribe.in" class="btn ghost btn-sm">
+                Email Desk
+              </a>
+            </div>
+          </div>
+
+          <!-- Flagship Studios -->
+          <h3 style="font-size:24px; margin-bottom:18px;">Flagship Experience Studios</h3>
+
+          <div class="studio-card">
+            <h4 style="font-size:18px; color:var(--gold); margin-bottom:6px;">Mumbai Atelier</h4>
+            <p style="font-size:14px; margin-bottom:6px;">14 Turner Road, Near Pali Village, Bandra West, Mumbai 400050</p>
+            <span style="font-size:12px; color:var(--muted);">Mon - Sun: 11:00 AM – 9:00 PM</span>
+          </div>
+
+          <div class="studio-card">
+            <h4 style="font-size:18px; color:var(--gold); margin-bottom:6px;">Bengaluru Atelier</h4>
+            <p style="font-size:14px; margin-bottom:6px;">742, 100 Feet Road, Indiranagar, Bengaluru 560038</p>
+            <span style="font-size:12px; color:var(--muted);">Mon - Sun: 11:00 AM – 9:00 PM</span>
+          </div>
+
+          <div class="studio-card">
+            <h4 style="font-size:18px; color:var(--gold); margin-bottom:6px;">New Delhi Studio</h4>
+            <p style="font-size:14px; margin-bottom:6px;">Block F, Inner Circle, Connaught Place, New Delhi 110001</p>
+            <span style="font-size:12px; color:var(--muted);">Mon - Sun: 11:00 AM – 9:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div>
+          <a class="logo" href="index.html" style="margin-bottom:14px;">
+            <span class="logo-mark"></span>
+            ALPHA TRIBE
+          </a>
+          <p style="color:var(--muted); font-size:13.5px; line-height:1.7;">
+            Wear your Alpha. Luxury menswear engineered for the modern Indian gentleman who moves with quiet purpose.
+          </p>
+          <div class="f-badge">PAN-INDIA 2-4 DAYS EXPRESS</div>
+        </div>
+
+        <div>
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="collections.html?cat=casual-shirts">Casual Shirts</a></li>
+            <li><a href="collections.html?cat=denim-jeans">Denim Jeans</a></li>
+            <li><a href="collections.html?cat=polo-t-shirts">Polo T-Shirts</a></li>
+            <li><a href="collections.html?cat=formal-shirts">Formal Shirts</a></li>
+            <li><a href="collections.html?cat=round-neck-t-shirts">Round Neck Tees</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>The House</h4>
+          <ul>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="looks.html">Style Guide</a></li>
+            <li><a href="contact.html">Flagship Studios</a></li>
+            <li><a href="about.html#craft">Craftsmanship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Client Concierge</h4>
+          <ul>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="returns.html">7-Day Returns & Exchanges</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Stay Connected</h4>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">Sign up for private releases & VIP invites.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button class="btn btn-sm" type="submit">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="copy">
+        <div>© 2026 Alpha Tribe Menswear Private Limited. All Rights Reserved.</div>
+        <div class="copy-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping.html">Logistics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contact-submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Transmitting to Concierge...';
+
+      const ticketId = '#TKT-' + Math.floor(10000 + Math.random() * 90000);
+
+      setTimeout(() => {
+        document.getElementById('contact-form').reset();
+        btn.disabled = false;
+        btn.textContent = 'Dispatch Message to Concierge';
+        showToast(`✦ Inquiry registered as <strong>${ticketId}</strong>. Our concierge will reply within 4 business hours.`);
+      }, 900);
+    }
+  </script>
+</body>
+</html>

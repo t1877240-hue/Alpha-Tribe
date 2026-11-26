@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shopping Bag | Alpha Tribe Luxury Menswear</title>
+  <meta name="description" content="Review your selected Alpha Tribe garments, apply coupon codes, and proceed to secure checkout.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cart-page-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 24px;
+    }
+    .cart-table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .cart-summary-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 32px;
+      border-radius: var(--radius-sm);
+      position: sticky;
+      top: 96px;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+    .summary-row.total {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--text);
+      padding-top: 16px;
+      margin-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .coupon-box {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    @media (max-width: 900px) {
+      .cart-page-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .cart-summary-box {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="wrap">
+      <div>✦ Complimentary Pan-India Delivery on orders above ₹1,999 | Use Code <strong>FIRSTALPHA</strong> for 15% Off</div>
+      <div class="top-bar-links">
+        <a href="shipping.html">Track Order</a>
+        <a href="contact.html">Store Locator</a>
+        <span>INR (₹)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Header -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <button class="action-btn menu-toggle" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          ALPHA TRIBE
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="looks.html">Style Guide</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-trigger-btn" aria-label="Search Garments">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          
+          <a class="action-btn" href="collections.html" title="Wishlist" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="action-badge wishlist-badge-count" style="display:none;">0</span>
+          </a>
+
+          <button class="action-btn" onclick="openCartDrawer()" aria-label="View Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="action-badge cart-badge-count" style="display:none;">0</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 88px;">
+    <div class="wrap">
+      <!-- Breadcrumb -->
+      <div style="font-size:12.5px; color:var(--muted); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.04em;">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; 
+        <span style="color:var(--gold)">Your Shopping Bag</span>
+      </div>
+
+      <h1 style="font-size:clamp(34px, 4.5vw, 48px); margin-bottom:8px;">Your Shopping Bag</h1>
+      <p style="color:var(--muted); font-size:15px; margin-bottom:28px;" id="cart-item-count-label">Review your curated garments before entering checkout.</p>
+
+      <!-- Cart Content Wrapper -->
+      <div id="cart-filled-view">
+        <!-- Free Shipping Meter -->
+        <div style="background:var(--surface); border:1px solid var(--line); padding:16px 24px; border-radius:var(--radius-sm); margin-bottom:28px;">
+          <div style="display:flex; justify-content:space-between; font-size:14px; margin-bottom:8px;">
+            <span id="page-ship-text">Add items for free shipping</span>
+            <span style="color:var(--gold); font-weight:600;">Pan-India Express</span>
+          </div>
+          <div class="shipping-bar-progress" style="height:6px;">
+            <div class="shipping-bar-fill" id="page-ship-fill"></div>
+          </div>
+        </div>
+
+        <div class="cart-page-layout">
+          <!-- Items List -->
+          <div>
+            <div class="cart-table-wrap" id="cart-page-items">
+              <!-- Dynamically populated -->
+            </div>
+
+            <!-- Notes & Continue Shopping -->
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px; flex-wrap:wrap; gap:16px;">
+              <a href="collections.html" class="btn ghost btn-sm">← Continue Shopping</a>
+              <button onclick="clearCart(); renderPageCart();" style="background:transparent; border:none; color:var(--muted); font-size:13px; text-decoration:underline; cursor:pointer;">
+                Clear Entire Bag
+              </button>
+            </div>
+          </div>
+
+          <!-- Summary Box -->
+          <div class="cart-summary-box">
+            <h3 style="font-size:22px; margin-bottom:20px;">Order Summary</h3>
+
+            <div class="summary-row">
+              <span>Bag Subtotal</span>
+              <span id="page-subtotal">₹0</span>
+            </div>
+
+            <div class="summary-row" id="page-discount-row" style="display:none; color:var(--success);">
+              <span id="page-discount-label">Promo Discount</span>
+              <span id="page-discount-val">-₹0</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Estimated Shipping</span>
+              <span id="page-shipping">FREE</span>
+            </div>
+
+            <div class="summary-row" style="font-size:12.5px; color:var(--muted);">
+              <span>Taxes</span>
+              <span>Included (12% GST)</span>
+            </div>
+
+            <!-- Promo Code Input -->
+            <div style="margin:20px 0; padding-top:16px; border-top:1px solid var(--line);">
+              <div style="font-size:12.5px; text-transform:uppercase; color:var(--muted); margin-bottom:8px; font-weight:600;">
+                Have a Promo Code?
+              </div>
+              <div class="coupon-box">
+                <input type="text" id="promo-input" class="form-input" placeholder="e.g. FIRSTALPHA" style="text-transform:uppercase; padding:10px 14px; font-size:13px;">
+                <button class="btn btn-sm" onclick="applyPagePromo()">Apply</button>
+              </div>
+              <div id="promo-applied-badge" style="display:none; align-items:center; justify-content:space-between; background:var(--gold-dim); border:1px solid var(--gold); padding:8px 12px; border-radius:var(--radius-sm); font-size:12.5px; color:var(--gold);">
+                <span id="promo-applied-text">Code FIRSTALPHA applied</span>
+                <button onclick="removePagePromo()" style="background:transparent; border:none; color:var(--gold); cursor:pointer; font-size:14px;">✕</button>
+              </div>
+            </div>
+
+            <div class="summary-row total">
+              <span>Grand Total</span>
+              <span class="price" id="page-grand-total" style="font-size:24px;">₹0</span>
+            </div>
+
+            <div style="margin-top:24px;">
+              <a href="checkout.html" class="btn btn-full btn-lg">
+                Proceed to Checkout →
+              </a>
+            </div>
+
+            <!-- Trust Highlights -->
+            <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--line); display:grid; gap:12px; font-size:12.5px; color:var(--muted);">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="color:var(--gold)">✓</span> 7-Day Complimentary Doorstep Returns & Exchanges
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="color:var(--gold)">✓</span> 256-Bit SSL Encrypted Indian Payment Processing
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="color:var(--gold)">✓</span> UPI, Credit/Debit Cards, Net Banking & COD
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty Bag State -->
+      <div id="cart-empty-view" style="display:none; text-align:center; padding:96px 20px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm);">
+        <div style="font-size:56px; margin-bottom:16px;">🛍️</div>
+        <h2 style="font-size:32px; margin-bottom:12px;">Your Shopping Bag is Empty</h2>
+        <p style="color:var(--muted); max-width:480px; margin:0 auto 28px; font-size:15px;">
+          Define your edge today. Explore our engineered cuts in twill shirts, Japanese selvedge denim, and Supima polos.
+        </p>
+        <a href="collections.html" class="btn btn-lg">Explore The Collections</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div>
+          <a class="logo" href="index.html" style="margin-bottom:14px;">
+            <span class="logo-mark"></span>
+            ALPHA TRIBE
+          </a>
+          <p style="color:var(--muted); font-size:13.5px; line-height:1.7;">
+            Wear your Alpha. Luxury menswear engineered for the modern Indian gentleman who moves with quiet purpose.
+          </p>
+          <div class="f-badge">PAN-INDIA 2-4 DAYS EXPRESS</div>
+        </div>
+
+        <div>
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="collections.html?cat=casual-shirts">Casual Shirts</a></li>
+            <li><a href="collections.html?cat=denim-jeans">Denim Jeans</a></li>
+            <li><a href="collections.html?cat=polo-t-shirts">Polo T-Shirts</a></li>
+            <li><a href="collections.html?cat=formal-shirts">Formal Shirts</a></li>
+            <li><a href="collections.html?cat=round-neck-t-shirts">Round Neck Tees</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>The House</h4>
+          <ul>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="looks.html">Style Guide</a></li>
+            <li><a href="contact.html">Flagship Studios</a></li>
+            <li><a href="about.html#craft">Craftsmanship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Client Concierge</h4>
+          <ul>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="returns.html">7-Day Returns & Exchanges</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Stay Connected</h4>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">Sign up for private releases & VIP invites.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button class="btn btn-sm" type="submit">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="copy">
+        <div>© 2026 Alpha Tribe Menswear Private Limited. All Rights Reserved.</div>
+        <div class="copy-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping.html">Logistics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPageCart();
+    });
+
+    function renderPageCart() {
+      const cart = getCart();
+      const totals = getCartTotals();
+      const filledView = document.getElementById('cart-filled-view');
+      const emptyView = document.getElementById('cart-empty-view');
+
+      if (cart.length === 0) {
+        filledView.style.display = 'none';
+        emptyView.style.display = 'block';
+        return;
+      }
+
+      filledView.style.display = 'block';
+      emptyView.style.display = 'none';
+
+      // Shipping progress
+      const shipText = document.getElementById('page-ship-text');
+      const shipFill = document.getElementById('page-ship-fill');
+      if (totals.subtotal >= totals.freeShippingThreshold) {
+        shipText.innerHTML = `🎉 <strong>Complimentary Pan-India Shipping Unlocked!</strong>`;
+        shipFill.style.width = '100%';
+      } else {
+        const pct = Math.min(100, Math.round((totals.subtotal / totals.freeShippingThreshold) * 100));
+        shipText.innerHTML = `Add <strong>${formatINR(totals.amountNeededForFreeShip)}</strong> more to get <strong>Free Pan-India Delivery</strong>`;
+        shipFill.style.width = `${pct}%`;
+      }
+
+      // Render Items
+      const itemsContainer = document.getElementById('cart-page-items');
+      itemsContainer.innerHTML = cart.map(item => {
+        const p = getProductById(item.productId);
+        if (!p) return '';
+        return `
+          <div style="display:flex; gap:20px; padding:24px; border-bottom:1px solid var(--line); align-items:center;">
+            <img src="${p.images[0]}" alt="${p.name}" style="width:96px; height:124px; object-fit:cover; border-radius:var(--radius-sm); background:#181715;">
+            <div style="flex-grow:1;">
+              <span class="tag" style="font-size:11px; margin-bottom:4px;">${p.category}</span>
+              <h3 style="font-size:20px; margin-bottom:6px;"><a href="product.html?id=${p.id}">${p.name}</a></h3>
+              <div style="font-size:13px; color:var(--muted); margin-bottom:12px;">
+                Size: <strong style="color:var(--text)">${item.size}</strong> ${item.color ? `· Color: <strong>${item.color}</strong>` : ''}
+              </div>
+              <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+                <div class="qty-control">
+                  <button class="qty-btn" onclick="updateQuantity('${item.productId}', '${item.size}', -1); renderPageCart();">−</button>
+                  <span class="qty-val">${item.quantity}</span>
+                  <button class="qty-btn" onclick="updateQuantity('${item.productId}', '${item.size}', 1); renderPageCart();">+</button>
+                </div>
+                <button onclick="removeFromCart('${item.productId}', '${item.size}'); renderPageCart();" style="background:transparent; border:none; color:var(--muted); font-size:12.5px; text-decoration:underline; cursor:pointer;">
+                  Remove
+                </button>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <div class="price" style="font-size:20px;">${formatINR(p.price * item.quantity)}</div>
+              <div style="font-size:12px; color:var(--muted); margin-top:4px;">${formatINR(p.price)} each</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Totals
+      document.getElementById('page-subtotal').textContent = formatINR(totals.subtotal);
+      document.getElementById('page-shipping').innerHTML = totals.shipping === 0 ? '<strong style="color:var(--gold)">FREE</strong>' : formatINR(totals.shipping);
+      document.getElementById('page-grandTotal' || 'page-grand-total').textContent = formatINR(totals.grandTotal);
+
+      // Promo Box
+      const promoRow = document.getElementById('page-discount-row');
+      const promoBadge = document.getElementById('promo-applied-badge');
+      const promoInput = document.getElementById('promo-input');
+
+      if (totals.activePromo && totals.discount > 0) {
+        promoRow.style.display = 'flex';
+        document.getElementById('page-discount-label').textContent = `Discount (${totals.activePromo.code})`;
+        document.getElementById('page-discount-val').textContent = `-${formatINR(totals.discount)}`;
+        promoBadge.style.display = 'flex';
+        document.getElementById('promo-applied-text').textContent = `Code ${totals.activePromo.code} applied (${totals.activePromo.label})`;
+        if (promoInput) promoInput.value = '';
+      } else {
+        promoRow.style.display = 'none';
+        promoBadge.style.display = 'none';
+      }
+    }
+
+    function applyPagePromo() {
+      const code = document.getElementById('promo-input').value.trim().toUpperCase();
+      if (!code) return;
+      if (PROMO_CODES[code]) {
+        savePromo(code);
+        showToast(`Promo <strong>${code}</strong> applied successfully!`);
+        renderPageCart();
+      } else {
+        showToast(`Invalid promo code. Try <strong>FIRSTALPHA</strong> or <strong>ALPHA10</strong>`);
+      }
+    }
+
+    function removePagePromo() {
+      savePromo(null);
+      showToast('Promo code removed.');
+      renderPageCart();
+    }
+  </script>
+</body>
+</html>

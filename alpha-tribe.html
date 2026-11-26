@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alpha Tribe | Premium Menswear for the Modern Indian Man</title>
+  <meta name="description" content="Precision-cut casual shirts, denim jeans, polos, and formal shirts engineered for the Indian physique. Wear your Alpha.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="wrap">
+      <div>✦ Complimentary Pan-India Delivery on orders above ₹1,999 | Use Code <strong>FIRSTALPHA</strong> for 15% Off</div>
+      <div class="top-bar-links">
+        <a href="shipping.html">Track Order</a>
+        <a href="contact.html">Store Locator</a>
+        <span>INR (₹)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Header -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <button class="action-btn menu-toggle" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          ALPHA TRIBE
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="looks.html">Style Guide</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-trigger-btn" aria-label="Search Garments">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          
+          <a class="action-btn" href="collections.html" title="Wishlist" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="action-badge wishlist-badge-count" style="display:none;">0</span>
+          </a>
+
+          <button class="action-btn" onclick="openCartDrawer()" aria-label="View Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="action-badge cart-badge-count" style="display:none;">0</span>
+          </button>
+
+          <a href="collections.html" class="btn btn-sm" style="margin-left:8px; display:none;">Shop Now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="tag">The Royal Edition · Season 2026</span>
+        <h1>Define Your Edge.</h1>
+        <p>Premium menswear engineered for the modern Indian physique. Precision cuts in casual shirts, Japanese selvedge denim, Supima polos and Italian-weave formals.</p>
+        
+        <div class="hero-cta">
+          <a class="btn" href="collections.html">Explore Collections</a>
+          <a class="btn ghost" href="looks.html">View Style Guide</a>
+        </div>
+
+        <div class="stats">
+          <div><b>500+</b><span>Styles Handcrafted</span></div>
+          <div><b>100%</b><span>Giza & Supima Cotton</span></div>
+          <div><b>10,000+</b><span>Gentlemen Served</span></div>
+          <div><b>4.9 ★</b><span>Customer Rating</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Showcase -->
+    <section style="background: var(--surface);">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="tag">Curated Categories</span>
+          <h2>Dressing The Man of Action</h2>
+          <p>Every piece in our catalog is cut with intention, balancing timeless tailoring with breathable ease.</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+          <a class="card" href="collections.html?cat=casual-shirts">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="Casual Shirts" loading="lazy">
+            </div>
+            <div class="card-info" style="text-align:center;">
+              <h3 class="card-title">Casual Shirts</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0;">Effortless cool, daily motion</p>
+            </div>
+          </a>
+
+          <a class="card" href="collections.html?cat=denim-jeans">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80" alt="Denim Jeans" loading="lazy">
+            </div>
+            <div class="card-info" style="text-align:center;">
+              <h3 class="card-title">Denim Jeans</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0;">12.5–14oz Ring-spun & Selvedge</p>
+            </div>
+          </a>
+
+          <a class="card" href="collections.html?cat=polo-t-shirts">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80" alt="Polo T-Shirts" loading="lazy">
+            </div>
+            <div class="card-info" style="text-align:center;">
+              <h3 class="card-title">Polo T-Shirts</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0;">Anti-curl Mercerized Supima</p>
+            </div>
+          </a>
+
+          <a class="card" href="collections.html?cat=formal-shirts">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80" alt="Formal Shirts" loading="lazy">
+            </div>
+            <div class="card-info" style="text-align:center;">
+              <h3 class="card-title">Formal Shirts</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0;">Two-ply Egyptian Giza cotton</p>
+            </div>
+          </a>
+
+          <a class="card" href="collections.html?cat=round-neck-t-shirts">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="Round Neck T-Shirts" loading="lazy">
+            </div>
+            <div class="card-info" style="text-align:center;">
+              <h3 class="card-title">Round Neck Tees</h3>
+              <p style="color:var(--muted); font-size:13px; margin:0;">240 GSM heavyweights</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bestseller Showcase -->
+    <section id="featured-products">
+      <div class="wrap">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span class="tag">Tribe Favorites</span>
+            <h2>Most Coveted Garments</h2>
+          </div>
+          <a href="collections.html" class="btn ghost btn-sm">View All 16+ Styles →</a>
+        </div>
+
+        <div class="grid" id="featured-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Craftsmanship / Brand Philosophy -->
+    <section style="background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:56px; align-items:center;">
+          <div style="position:relative;">
+            <img src="https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=900&q=80" alt="Alpha Tribe Craftsmanship" style="border-radius:var(--radius-sm); border:1px solid var(--line); width:100%; aspect-ratio:4/3; object-fit:cover;">
+            <div style="position:absolute; bottom:20px; right:20px; background:rgba(10,10,10,0.9); border:1px solid var(--gold); padding:16px 24px; border-radius:var(--radius-sm);">
+              <span style="font-family:var(--serif); font-size:24px; color:var(--gold); display:block; font-weight:700;">100% Made in India</span>
+              <span style="font-size:12px; color:var(--muted); text-transform:uppercase;">Fair-wage master tailors</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="tag">Our Heritage & Cut</span>
+            <h2 style="margin-bottom:20px;">Not Just Clothing.<br>A Quiet Dominance.</h2>
+            <p style="color:var(--muted); line-height:1.8;">
+              Most international menswear is cut for European torso proportions—either too tight across the shoulders or ballooning around the waist.
+            </p>
+            <p style="color:var(--muted); line-height:1.8;">
+              Alpha Tribe re-engineered the pattern from the ground up: broader shoulder spans, refined armholes that do not ride up, and a subtle taper down the ribcage. Tailored for comfort in India’s climate, built for authority anywhere in the world.
+            </p>
+            <div style="margin-top:32px; display:flex; gap:16px;">
+              <a href="about.html" class="btn">Discover Our Story</a>
+              <a href="collections.html" class="btn ghost">Shop The Fit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Style Guide Spotlight -->
+    <section>
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="tag">Editorial Lookbook</span>
+          <h2>How to Wear Your Alpha</h2>
+          <p>Curated capsules styled for high-stakes business meetings, spontaneous weekend drives, and late evenings.</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80" alt="The Office Alpha">
+              <span class="card-badge">Look 01</span>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">The Office Alpha</h3>
+              <p style="color:var(--muted); font-size:14px; margin-bottom:14px;">Sky Azure formal shirt, tailored chinos, dark brown leather belt. Crisp collar stays, commanding presence.</p>
+              <a href="looks.html" class="btn ghost btn-sm">Shop This Look</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="Weekend Warrior">
+              <span class="card-badge">Look 02</span>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Weekend Warrior</h3>
+              <p style="color:var(--muted); font-size:14px; margin-bottom:14px;">Grey Checkered twill shirt, light blue stretch denim, clean white court sneakers. Relaxed sleeves rolled twice.</p>
+              <a href="looks.html" class="btn ghost btn-sm">Shop This Look</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1625910513413-722394747c34?auto=format&fit=crop&w=800&q=80" alt="Night Out Ready">
+              <span class="card-badge">Look 03</span>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Night Out Ready</h3>
+              <p style="color:var(--muted); font-size:14px; margin-bottom:14px;">Obsidian Black Supima knit polo tucked into tapered indigo jeans. Sleek, matte, and effortlessly sharp.</p>
+              <a href="looks.html" class="btn ghost btn-sm">Shop This Look</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof & Reviews -->
+    <section style="background: var(--surface);">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="tag">The Tribe Speaks</span>
+          <h2>Real Men. Real Style.</h2>
+          <p>Over 10,000 discerning men across India trust Alpha Tribe for their daily uniform.</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <div style="background:var(--bg); border:1px solid var(--line); padding:32px; border-left:3px solid var(--gold); border-radius:var(--radius-sm);">
+            <div style="color:var(--gold); font-size:16px; margin-bottom:12px;">★★★★★</div>
+            <p style="font-family:var(--serif); font-size:20px; line-height:1.5; color:var(--text); margin-bottom:16px;">
+              “The Light Blue formal shirt fits like bespoke tailoring. It breathes in Mumbai heat and keeps crisp all the way through dinner meetings.”
+            </p>
+            <div style="font-size:13px; font-weight:600; color:var(--gold);">Arjun M.</div>
+            <div style="font-size:12px; color:var(--muted);">Managing Director · Mumbai</div>
+          </div>
+
+          <div style="background:var(--bg); border:1px solid var(--line); padding:32px; border-left:3px solid var(--gold); border-radius:var(--radius-sm);">
+            <div style="color:var(--gold); font-size:16px; margin-bottom:12px;">★★★★★</div>
+            <p style="font-family:var(--serif); font-size:20px; line-height:1.5; color:var(--text); margin-bottom:16px;">
+              “Finally a brand that understands broad Indian shoulders without making the waist bag out. The raw selvedge jeans are pure perfection.”
+            </p>
+            <div style="font-size:13px; font-weight:600; color:var(--gold);">Rohan S.</div>
+            <div style="font-size:12px; color:var(--muted);">Tech Founder · New Delhi</div>
+          </div>
+
+          <div style="background:var(--bg); border:1px solid var(--line); padding:32px; border-left:3px solid var(--gold); border-radius:var(--radius-sm);">
+            <div style="color:var(--gold); font-size:16px; margin-bottom:12px;">★★★★★</div>
+            <p style="font-family:var(--serif); font-size:20px; line-height:1.5; color:var(--text); margin-bottom:16px;">
+              “The Supima knit polo is unmatched. No collar sag after multiple washes. Ordering 3 more colors today.”
+            </p>
+            <div style="font-size:13px; font-weight:600; color:var(--gold);">Karan P.</div>
+            <div style="font-size:12px; color:var(--muted);">Architect · Bengaluru</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIP Newsletter -->
+    <section style="text-align:center; background: radial-gradient(ellipse at 50% 0, #2b2214 0%, #0a0a0a 75%); border-top:1px solid var(--line);">
+      <div class="wrap-sm">
+        <span class="tag">Private Clan</span>
+        <h2 style="font-size: clamp(36px, 5vw, 54px);">Join 10,000+ Alpha Men</h2>
+        <p style="color:var(--muted); margin-bottom:28px;">Gain first access to limited seasonal drops, private tailoring trunk shows, and receive an instant 15% welcome code.</p>
+        
+        <form class="newsletter-form" style="max-width:520px; margin:0 auto;" novalidate>
+          <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+          <button type="submit" class="btn">Join Tribe</button>
+        </form>
+        <div style="margin-top:14px; font-size:12px; color:var(--muted);">Zero spam. Only rare drops and timeless guidance.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div>
+          <a class="logo" href="index.html" style="margin-bottom:14px;">
+            <span class="logo-mark"></span>
+            ALPHA TRIBE
+          </a>
+          <p style="color:var(--muted); font-size:13.5px; line-height:1.7;">
+            Wear your Alpha. Luxury menswear engineered for the modern Indian gentleman who moves with quiet purpose.
+          </p>
+          <div class="f-badge">PAN-INDIA 2-4 DAYS EXPRESS</div>
+        </div>
+
+        <div>
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="collections.html?cat=casual-shirts">Casual Shirts</a></li>
+            <li><a href="collections.html?cat=denim-jeans">Denim Jeans</a></li>
+            <li><a href="collections.html?cat=polo-t-shirts">Polo T-Shirts</a></li>
+            <li><a href="collections.html?cat=formal-shirts">Formal Shirts</a></li>
+            <li><a href="collections.html?cat=round-neck-t-shirts">Round Neck Tees</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>The House</h4>
+          <ul>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="looks.html">Style Guide</a></li>
+            <li><a href="contact.html">Flagship Studios</a></li>
+            <li><a href="about.html#craft">Craftsmanship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Client Concierge</h4>
+          <ul>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="returns.html">7-Day Returns & Exchanges</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Stay Connected</h4>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">Sign up for private releases & VIP invites.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button class="btn btn-sm" type="submit">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="copy">
+        <div>© 2026 Alpha Tribe Menswear Private Limited. All Rights Reserved.</div>
+        <div class="copy-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping.html">Logistics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const featuredGrid = document.getElementById('featured-grid');
+      if (featuredGrid && typeof getAllProducts === 'function') {
+        const products = getAllProducts().slice(0, 8);
+        featuredGrid.innerHTML = products.map(p => `
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
+              ${p.badge ? `<span class="card-badge">${p.badge}</span>` : ''}
+              <button class="wishlist-btn" data-product-id="${p.id}" onclick="toggleWishlist('${p.id}', this)" aria-label="Save to Wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+              <div class="card-quick-actions">
+                <button class="btn btn-sm btn-full" onclick="openQuickView('${p.id}')">Quick View</button>
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="card-cat">${p.category}</div>
+              <h3 class="card-title"><a href="product.html?id=${p.id}">${p.name}</a></h3>
+              <div class="card-rating">
+                <span class="stars">★★★★★</span>
+                <span>(${p.reviewsCount})</span>
+              </div>
+              <div class="card-bottom">
+                <div class="price-box">
+                  <span class="price">${formatINR(p.price)}</span>
+                  <span class="price-orig">${formatINR(p.originalPrice)}</span>
+                </div>
+                <button class="btn btn-sm" onclick="addToCart('${p.id}', '${p.sizes[0]}')">Add</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+        
+        if (typeof updateWishlistButtons === 'function') updateWishlistButtons();
+      }
+    });
+  </script>
+</body>
+</html>

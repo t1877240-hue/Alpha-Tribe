@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Garment Details | Alpha Tribe Menswear</title>
+  <meta name="description" content="Explore master tailoring, fabric compositions and precision fit specifications for Alpha Tribe luxury menswear.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pdp-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .gallery-container {
+      display: flex;
+      gap: 16px;
+      position: sticky;
+      top: 96px;
+    }
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 80px;
+    }
+    .thumb-btn {
+      width: 80px;
+      height: 104px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: var(--transition);
+      padding: 0;
+    }
+    .thumb-btn.active, .thumb-btn:hover {
+      opacity: 1;
+      border-color: var(--gold);
+    }
+    .thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .main-image-wrap {
+      flex: 1;
+      aspect-ratio: 3/4;
+      background: #181715;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+    }
+    .main-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .color-swatch-wrap {
+      display: flex;
+      gap: 12px;
+      margin: 12px 0 24px;
+    }
+    .color-swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+    }
+    .color-swatch.active {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px var(--bg);
+    }
+    .pdp-actions {
+      display: grid;
+      grid-template-columns: 140px 1fr 1fr;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .pincode-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 20px;
+      border-radius: var(--radius-sm);
+      margin: 28px 0;
+    }
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      text-align: left;
+      margin-top: 14px;
+    }
+    .size-table th, .size-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+    }
+    .size-table th {
+      background: #0d0c0a;
+      color: var(--gold);
+    }
+    @media (max-width: 900px) {
+      .pdp-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .gallery-container {
+        flex-direction: column-reverse;
+        position: static;
+      }
+      .thumbnails {
+        flex-direction: row;
+        width: 100%;
+      }
+      .thumb-btn {
+        width: 70px;
+        height: 90px;
+      }
+      .pdp-actions {
+        grid-template-columns: 1fr 1fr;
+      }
+      .pdp-actions .qty-control {
+        grid-column: span 2;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="wrap">
+      <div>✦ Complimentary Pan-India Delivery on orders above ₹1,999 | Use Code <strong>FIRSTALPHA</strong> for 15% Off</div>
+      <div class="top-bar-links">
+        <a href="shipping.html">Track Order</a>
+        <a href="contact.html">Store Locator</a>
+        <span>INR (₹)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Header -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <button class="action-btn menu-toggle" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          ALPHA TRIBE
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html" class="active">Collections</a></li>
+          <li><a href="looks.html">Style Guide</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-trigger-btn" aria-label="Search Garments">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          
+          <a class="action-btn" href="collections.html" title="Wishlist" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="action-badge wishlist-badge-count" style="display:none;">0</span>
+          </a>
+
+          <button class="action-btn" onclick="openCartDrawer()" aria-label="View Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="action-badge cart-badge-count" style="display:none;">0</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 88px;">
+    <div class="wrap">
+      <!-- Breadcrumb -->
+      <div style="font-size:12.5px; color:var(--muted); margin-bottom:24px; text-transform:uppercase; letter-spacing:0.04em;">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; 
+        <a href="collections.html">Collections</a> &nbsp;/&nbsp; 
+        <a href="#" id="pdp-crumb-cat">Category</a> &nbsp;/&nbsp; 
+        <span style="color:var(--gold)" id="pdp-crumb-title">Garment</span>
+      </div>
+
+      <!-- Main PDP Layout -->
+      <div class="pdp-layout">
+        <!-- Gallery -->
+        <div class="gallery-container">
+          <div class="thumbnails" id="pdp-thumbnails">
+            <!-- Thumbnail buttons injected -->
+          </div>
+          <div class="main-image-wrap">
+            <img id="pdp-main-image" src="" alt="Garment Photo">
+            <button class="wishlist-btn" id="pdp-wishlist-btn" onclick="togglePDPWishlist()" aria-label="Save to Wishlist" style="top:16px; right:16px; width:44px; height:44px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Details -->
+        <div>
+          <span class="tag" id="pdp-category-tag">Collection</span>
+          <h1 style="font-size:clamp(32px, 4vw, 44px); margin:6px 0 12px;" id="pdp-name">Garment Name</h1>
+          <p style="color:var(--gold); font-size:15px; font-weight:500; margin-bottom:14px;" id="pdp-tagline">Tagline</p>
+
+          <div class="card-rating" style="margin-bottom:16px;">
+            <span class="stars" style="font-size:15px;">★★★★★</span>
+            <span id="pdp-rating-text">4.9 (184 verified reviews)</span>
+          </div>
+
+          <!-- Price Box -->
+          <div class="price-box" style="margin-bottom:20px; align-items:baseline;">
+            <span class="price" style="font-size:28px;" id="pdp-price">₹1,299</span>
+            <span class="price-orig" style="font-size:18px;" id="pdp-orig-price">₹2,199</span>
+            <span class="price-discount" id="pdp-discount">40% OFF</span>
+            <span style="font-size:12px; color:var(--muted); margin-left:8px;">Inclusive of all taxes</span>
+          </div>
+
+          <p style="color:var(--muted); line-height:1.7; margin-bottom:24px;" id="pdp-description">
+            Description
+          </p>
+
+          <!-- Color Swatches -->
+          <div id="pdp-color-section">
+            <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">
+              Color: <span id="pdp-selected-color" style="color:var(--gold); font-weight:400; text-transform:none;">Charcoal</span>
+            </div>
+            <div class="color-swatch-wrap" id="pdp-swatches"></div>
+          </div>
+
+          <!-- Size Selector & Guide -->
+          <div style="margin-top:20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">
+                Select Size: <span id="pdp-selected-size" style="color:var(--gold); font-weight:400;">M</span>
+              </span>
+              <button onclick="openSizeGuideModal()" style="background:transparent; border:none; color:var(--gold); font-size:12.5px; text-decoration:underline; cursor:pointer;">
+                Size Chart & Fit Guide 📏
+              </button>
+            </div>
+
+            <div class="size-selector" id="pdp-size-selector">
+              <!-- Dynamically rendered -->
+            </div>
+
+            <!-- Low stock alert -->
+            <div id="pdp-stock-alert" style="font-size:12.5px; color:#e0934e; margin-top:6px; display:flex; align-items:center; gap:6px;">
+              <span>⚡</span> Only <strong id="pdp-stock-count">4</strong> left in stock — order soon!
+            </div>
+          </div>
+
+          <!-- Actions: Qty, Add to Bag, Buy Now -->
+          <div class="pdp-actions">
+            <div class="qty-control" style="height:48px;">
+              <button class="qty-btn" style="width:40px; height:46px; font-size:16px;" onclick="adjustPDPQty(-1)">−</button>
+              <span class="qty-val" id="pdp-qty-val" style="width:44px; font-size:15px;">1</span>
+              <button class="qty-btn" style="width:40px; height:46px; font-size:16px;" onclick="adjustPDPQty(1)">+</button>
+            </div>
+
+            <button class="btn" style="height:48px;" onclick="executePDPAddToCart()">
+              Add to Bag
+            </button>
+
+            <button class="btn ghost" style="height:48px; border-color:var(--gold); color:var(--gold);" onclick="executePDPBuyNow()">
+              Buy It Now
+            </button>
+          </div>
+
+          <!-- Pin-code Delivery Checker -->
+          <div class="pincode-box">
+            <div style="font-size:13px; font-weight:600; text-transform:uppercase; margin-bottom:8px;">
+              Pan-India Delivery Availability
+            </div>
+            <div style="display:flex; gap:10px;">
+              <input type="text" id="pincode-input" class="form-input" placeholder="Enter 6-digit PIN (e.g. 400050, 560001)" maxlength="6" style="padding:10px 14px; font-size:13px;">
+              <button class="btn btn-sm" onclick="checkPincode()">Check</button>
+            </div>
+            <div id="pincode-result" style="font-size:12.5px; margin-top:8px; display:none;"></div>
+          </div>
+
+          <!-- Accordion Information Tabs -->
+          <div style="margin-top:32px;">
+            <div class="accordion active" onclick="toggleAccordion(this)">
+              <div class="accordion-header">
+                <span>Fabric Composition & Specs</span>
+                <span class="accordion-icon">+</span>
+              </div>
+              <div class="accordion-body">
+                <p id="pdp-fabric">100% Combed Twill Cotton.</p>
+                <ul style="padding-left:18px; margin:8px 0; font-size:13.5px; line-height:1.7;">
+                  <li>Pre-shrunk to prevent size distortion after home laundering.</li>
+                  <li>Double-needle chain-stitched stress points for lifelong endurance.</li>
+                  <li>Breathable weave optimized for India's humid coastal and dry continental zones.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="accordion" onclick="toggleAccordion(this)">
+              <div class="accordion-header">
+                <span>The Alpha Indian Fit Engineering</span>
+                <span class="accordion-icon">+</span>
+              </div>
+              <div class="accordion-body">
+                <p id="pdp-fit">Signature Athletic Taper.</p>
+                <p>Engineered with 1.5 inches of extra chest ease and an armhole radius calibrated so you can lift your arms without pulling the entire hem out of your waistband.</p>
+              </div>
+            </div>
+
+            <div class="accordion" onclick="toggleAccordion(this)">
+              <div class="accordion-header">
+                <span>Care & Maintenance</span>
+                <span class="accordion-icon">+</span>
+              </div>
+              <div class="accordion-body">
+                <p id="pdp-care">Machine wash cold with like colors.</p>
+              </div>
+            </div>
+
+            <div class="accordion" onclick="toggleAccordion(this)">
+              <div class="accordion-header">
+                <span>Shipping & Doorstep Returns</span>
+                <span class="accordion-icon">+</span>
+              </div>
+              <div class="accordion-body">
+                <p>✦ Complimentary pan-India express delivery on all orders above ₹1,999.</p>
+                <p>✦ Metro cities: 2–3 business days via Bluedart Air.</p>
+                <p>✦ 7-Day Hassle-Free Doorstep Pickup for exchange or full refund.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommended Garments Section -->
+      <section style="padding: 72px 0 0; border-top: 1px solid var(--line); margin-top: 72px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:32px;">
+          <div>
+            <span class="tag">Curated Pairings</span>
+            <h2 style="font-size:32px;">Complete The Look</h2>
+          </div>
+          <a href="collections.html" class="btn ghost btn-sm">Explore Catalog →</a>
+        </div>
+        <div class="grid" id="pdp-related-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Interactive Size Guide Modal -->
+  <div class="modal-overlay" id="size-guide-modal" onclick="if(event.target === this) closeSizeGuideModal()">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSizeGuideModal()">✕</button>
+      <span class="tag">Alpha Tribe Fit Studio</span>
+      <h3 style="font-size:26px; margin-bottom:12px;">Garment Measurements (Inches)</h3>
+      <p style="color:var(--muted); font-size:13.5px; margin-bottom:20px;">
+        All measurements are true garment dimensions. For the ideal athletic fit, pick the size that matches your actual chest measurement plus 2–3 inches of comfortable ease.
+      </p>
+
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Size Label</th>
+            <th>Chest (in)</th>
+            <th>Shoulder (in)</th>
+            <th>Length (in)</th>
+            <th>Sleeve (in)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>S (38)</strong></td>
+            <td>40.0"</td>
+            <td>17.5"</td>
+            <td>28.5"</td>
+            <td>24.5"</td>
+          </tr>
+          <tr>
+            <td><strong>M (40)</strong></td>
+            <td>42.0"</td>
+            <td>18.2"</td>
+            <td>29.2"</td>
+            <td>25.0"</td>
+          </tr>
+          <tr>
+            <td><strong>L (42)</strong></td>
+            <td>44.5"</td>
+            <td>19.0"</td>
+            <td>30.0"</td>
+            <td>25.5"</td>
+          </tr>
+          <tr>
+            <td><strong>XL (44)</strong></td>
+            <td>47.0"</td>
+            <td>19.8"</td>
+            <td>30.8"</td>
+            <td>26.0"</td>
+          </tr>
+          <tr>
+            <td><strong>XXL (46)</strong></td>
+            <td>50.0"</td>
+            <td>20.5"</td>
+            <td>31.5"</td>
+            <td>26.5"</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="background:#0d0c0a; border:1px solid var(--line); padding:16px; margin-top:20px; font-size:12.5px; color:var(--muted);">
+        <strong style="color:var(--gold);">Still unsure about your size?</strong> Our sizing concierge is available via WhatsApp at +91 800-045-6789. Doorstep size exchanges are 100% complimentary.
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div>
+          <a class="logo" href="index.html" style="margin-bottom:14px;">
+            <span class="logo-mark"></span>
+            ALPHA TRIBE
+          </a>
+          <p style="color:var(--muted); font-size:13.5px; line-height:1.7;">
+            Wear your Alpha. Luxury menswear engineered for the modern Indian gentleman who moves with quiet purpose.
+          </p>
+          <div class="f-badge">PAN-INDIA 2-4 DAYS EXPRESS</div>
+        </div>
+
+        <div>
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="collections.html?cat=casual-shirts">Casual Shirts</a></li>
+            <li><a href="collections.html?cat=denim-jeans">Denim Jeans</a></li>
+            <li><a href="collections.html?cat=polo-t-shirts">Polo T-Shirts</a></li>
+            <li><a href="collections.html?cat=formal-shirts">Formal Shirts</a></li>
+            <li><a href="collections.html?cat=round-neck-t-shirts">Round Neck Tees</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>The House</h4>
+          <ul>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="looks.html">Style Guide</a></li>
+            <li><a href="contact.html">Flagship Studios</a></li>
+            <li><a href="about.html#craft">Craftsmanship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Client Concierge</h4>
+          <ul>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="returns.html">7-Day Returns & Exchanges</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Stay Connected</h4>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">Sign up for private releases & VIP invites.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button class="btn btn-sm" type="submit">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="copy">
+        <div>© 2026 Alpha Tribe Menswear Private Limited. All Rights Reserved.</div>
+        <div class="copy-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping.html">Logistics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let currentProduct = null;
+    let selectedSize = 'M';
+    let selectedColor = '';
+    let selectedQty = 1;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id') || 'casual-1';
+      currentProduct = getProductById(id);
+
+      renderPDP(currentProduct);
+      renderRelated(currentProduct);
+    });
+
+    function renderPDP(p) {
+      document.title = `${p.name} | Alpha Tribe`;
+      document.getElementById('pdp-crumb-cat').textContent = p.category;
+      document.getElementById('pdp-crumb-cat').href = `collections.html?cat=${p.categorySlug}`;
+      document.getElementById('pdp-crumb-title').textContent = p.name;
+      document.getElementById('pdp-category-tag').textContent = p.category;
+      document.getElementById('pdp-name').textContent = p.name;
+      document.getElementById('pdp-tagline').textContent = p.tagline;
+      document.getElementById('pdp-rating-text').textContent = `${p.rating} (${p.reviewsCount} verified reviews)`;
+      document.getElementById('pdp-price').textContent = formatINR(p.price);
+      document.getElementById('pdp-orig-price').textContent = formatINR(p.originalPrice);
+      document.getElementById('pdp-discount').textContent = `${Math.round((1 - p.price/p.originalPrice)*100)}% OFF`;
+      document.getElementById('pdp-description').textContent = p.description;
+      document.getElementById('pdp-fabric').textContent = p.fabric;
+      document.getElementById('pdp-fit').textContent = p.fit;
+      document.getElementById('pdp-care').textContent = p.washCare;
+      document.getElementById('pdp-stock-count').textContent = p.stock || 4;
+
+      // Gallery
+      const mainImg = document.getElementById('pdp-main-image');
+      mainImg.src = p.images[0];
+      mainImg.alt = p.name;
+
+      const thumbs = document.getElementById('pdp-thumbnails');
+      thumbs.innerHTML = p.images.map((imgUrl, i) => `
+        <button class="thumb-btn ${i === 0 ? 'active' : ''}" onclick="switchPDPImage('${imgUrl}', this)">
+          <img src="${imgUrl}" alt="${p.name} view ${i+1}">
+        </button>
+      `).join('');
+
+      // Colors
+      const colorSection = document.getElementById('pdp-color-section');
+      const swatches = document.getElementById('pdp-swatches');
+      if (p.colors && p.colors.length > 0) {
+        selectedColor = p.colors[0].name;
+        document.getElementById('pdp-selected-color').textContent = selectedColor;
+        swatches.innerHTML = p.colors.map((c, i) => `
+          <div class="color-swatch ${i === 0 ? 'active' : ''}" style="background:${c.hex};" title="${c.name}" onclick="selectPDPColor('${c.name}', this)"></div>
+        `).join('');
+      } else {
+        colorSection.style.display = 'none';
+      }
+
+      // Sizes
+      selectedSize = p.sizes[0];
+      document.getElementById('pdp-selected-size').textContent = selectedSize;
+      const sizeSelector = document.getElementById('pdp-size-selector');
+      sizeSelector.innerHTML = p.sizes.map((s, i) => `
+        <div class="size-pill ${i === 0 ? 'active' : ''}" onclick="selectPDPSize('${s}', this)">${s}</div>
+      `).join('');
+
+      // Wishlist active state
+      updatePDPWishlistButton();
+    }
+
+    function switchPDPImage(url, btn) {
+      document.getElementById('pdp-main-image').src = url;
+      document.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function selectPDPColor(colorName, el) {
+      selectedColor = colorName;
+      document.getElementById('pdp-selected-color').textContent = colorName;
+      document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function selectPDPSize(size, el) {
+      selectedSize = size;
+      document.getElementById('pdp-selected-size').textContent = size;
+      document.querySelectorAll('#pdp-size-selector .size-pill').forEach(s => s.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function adjustPDPQty(delta) {
+      selectedQty = Math.max(1, selectedQty + delta);
+      document.getElementById('pdp-qty-val').textContent = selectedQty;
+    }
+
+    function executePDPAddToCart() {
+      if (!currentProduct) return;
+      addToCart(currentProduct.id, selectedSize, selectedQty, selectedColor);
+    }
+
+    function executePDPBuyNow() {
+      if (!currentProduct) return;
+      addToCart(currentProduct.id, selectedSize, selectedQty, selectedColor);
+      window.location.href = 'checkout.html';
+    }
+
+    function togglePDPWishlist() {
+      if (!currentProduct) return;
+      toggleWishlist(currentProduct.id);
+      updatePDPWishlistButton();
+    }
+
+    function updatePDPWishlistButton() {
+      if (!currentProduct) return;
+      const btn = document.getElementById('pdp-wishlist-btn');
+      const isFav = getWishlist().includes(currentProduct.id);
+      if (isFav) {
+        btn.classList.add('active');
+        btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+      }
+    }
+
+    function checkPincode() {
+      const pin = document.getElementById('pincode-input').value.trim();
+      const res = document.getElementById('pincode-result');
+      if (!/^\d{6}$/.test(pin)) {
+        res.style.display = 'block';
+        res.style.color = 'var(--danger)';
+        res.textContent = 'Please enter a valid 6-digit Indian Postal Code.';
+        return;
+      }
+      res.style.display = 'block';
+      res.style.color = 'var(--success)';
+      res.innerHTML = `✓ Available for PIN ${pin}: <strong>Express Delivery in 2–3 Days</strong> via Bluedart. Cash on delivery eligible.`;
+    }
+
+    function toggleAccordion(el) {
+      el.classList.toggle('active');
+    }
+
+    function openSizeGuideModal() {
+      document.getElementById('size-guide-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSizeGuideModal() {
+      document.getElementById('size-guide-modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function renderRelated(p) {
+      const grid = document.getElementById('pdp-related-grid');
+      const related = getAllProducts().filter(item => item.id !== p.id && item.categorySlug === p.categorySlug).slice(0, 4);
+      const fallback = related.length >= 3 ? related : getAllProducts().filter(item => item.id !== p.id).slice(0, 4);
+      
+      grid.innerHTML = fallback.map(item => `
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="${item.images[0]}" alt="${item.name}">
+            <div class="card-quick-actions">
+              <button class="btn btn-sm btn-full" onclick="openQuickView('${item.id}')">Quick View</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="card-cat">${item.category}</div>
+            <h3 class="card-title"><a href="product.html?id=${item.id}">${item.name}</a></h3>
+            <div class="card-bottom">
+              <span class="price">${formatINR(item.price)}</span>
+              <a href="product.html?id=${item.id}" class="btn btn-sm">View</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

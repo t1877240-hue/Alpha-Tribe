@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Secure Checkout | Alpha Tribe Menswear</title>
+  <meta name="description" content="Secure, encrypted 256-bit checkout for Alpha Tribe luxury menswear orders. Pan-India delivery via Bluedart and Delhivery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .checkout-section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 32px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 24px;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #0a0a0a;
+      font-weight: 700;
+      font-size: 13px;
+      margin-right: 8px;
+    }
+    .payment-tab {
+      display: flex;
+      gap: 12px;
+      border: 1px solid var(--line);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      margin-bottom: 12px;
+      transition: var(--transition);
+      background: #0d0c0b;
+    }
+    .payment-tab.active {
+      border-color: var(--gold);
+      background: rgba(201, 162, 75, 0.05);
+    }
+    .payment-tab input {
+      accent-color: var(--gold);
+    }
+    .payment-body {
+      display: none;
+      padding: 16px;
+      background: #0a0908;
+      border: 1px solid var(--line);
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      margin-top: -12px;
+      margin-bottom: 12px;
+    }
+    .payment-body.active {
+      display: block;
+    }
+    .order-summary-sidebar {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 32px;
+      border-radius: var(--radius-sm);
+      position: sticky;
+      top: 96px;
+    }
+    @media (max-width: 900px) {
+      .checkout-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .order-summary-sidebar {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="wrap">
+      <div>✦ 256-Bit SSL Encrypted Indian Payment Processing | PCI-DSS Compliant</div>
+      <div class="top-bar-links">
+        <span>Concierge: +91 800-045-6789</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Simplistic for Checkout -->
+  <header>
+    <div class="wrap">
+      <nav style="height:64px;">
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          ALPHA TRIBE
+        </a>
+        <div style="font-size:13px; color:var(--muted); display:flex; align-items:center; gap:8px;">
+          <span>🔒 256-Bit Secure Checkout</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 88px;">
+    <div class="wrap">
+      <!-- Breadcrumb -->
+      <div style="font-size:12.5px; color:var(--muted); margin-bottom:20px; text-transform:uppercase; letter-spacing:0.04em;">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; 
+        <a href="cart.html">Shopping Bag</a> &nbsp;/&nbsp; 
+        <span style="color:var(--gold)">Checkout</span>
+      </div>
+
+      <div class="checkout-layout">
+        <!-- Left: Form Steps -->
+        <form id="checkout-form" onsubmit="handlePlaceOrder(event)">
+          <!-- Step 1: Customer Contact -->
+          <div class="checkout-section">
+            <h2 style="font-size:22px; margin-bottom:20px; display:flex; align-items:center;">
+              <span class="section-num">1</span> Contact Information
+            </h2>
+            <div class="form-row">
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Email Address *</label>
+                <input type="email" id="c-email" class="form-input" placeholder="you@domain.com" required value="arjun.kapoor@gmail.com">
+              </div>
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Phone Number (For SMS Tracking) *</label>
+                <input type="tel" id="c-phone" class="form-input" placeholder="10-digit mobile number" required value="9820123456" maxlength="10">
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Shipping Address -->
+          <div class="checkout-section">
+            <h2 style="font-size:22px; margin-bottom:20px; display:flex; align-items:center;">
+              <span class="section-num">2</span> Delivery Address (Pan-India)
+            </h2>
+
+            <div class="form-row">
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">First Name *</label>
+                <input type="text" id="c-fname" class="form-input" placeholder="First Name" required value="Arjun">
+              </div>
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">Last Name *</label>
+                <input type="text" id="c-lname" class="form-input" placeholder="Last Name" required value="Kapoor">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Street Address / Apartment / Suite *</label>
+              <input type="text" id="c-addr" class="form-input" placeholder="Flat / House No., Building Name, Street" required value="B-402, Pali Hill Apartments, Nargis Dutt Road">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">PIN Code * (Auto City Lookup)</label>
+                <input type="text" id="c-pincode" class="form-input" placeholder="6-digit PIN" required value="400050" maxlength="6" oninput="autoLookupPincode(this.value)">
+              </div>
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">City *</label>
+                <input type="text" id="c-city" class="form-input" required value="Mumbai">
+              </div>
+              <div class="form-group" style="flex:1;">
+                <label class="form-label">State *</label>
+                <input type="text" id="c-state" class="form-input" required value="Maharashtra">
+              </div>
+            </div>
+
+            <!-- Shipping Speed Selection -->
+            <div style="margin-top:20px;">
+              <label class="form-label">Delivery Speed</label>
+              <div style="display:grid; gap:10px;">
+                <label class="payment-tab active" id="ship-opt-std" onclick="selectShippingOpt('standard')">
+                  <input type="radio" name="shipping-speed" value="standard" checked>
+                  <div style="flex-grow:1;">
+                    <div style="display:flex; justify-content:space-between; font-weight:600; font-size:14px;">
+                      <span>Bluedart Pan-India Ground Express (2–4 Days)</span>
+                      <span id="std-shipping-price" style="color:var(--gold);">FREE</span>
+                    </div>
+                    <span style="font-size:12px; color:var(--muted)">Dispatched within 24 hours with full tracking.</span>
+                  </div>
+                </label>
+
+                <label class="payment-tab" id="ship-opt-air" onclick="selectShippingOpt('air')">
+                  <input type="radio" name="shipping-speed" value="air">
+                  <div style="flex-grow:1;">
+                    <div style="display:flex; justify-content:space-between; font-weight:600; font-size:14px;">
+                      <span>Priority Air Courier (1–2 Days Metro Guarantee)</span>
+                      <span style="color:var(--gold);">+₹149</span>
+                    </div>
+                    <span style="font-size:12px; color:var(--muted)">Direct airport air cargo for high priority.</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Payment Options -->
+          <div class="checkout-section">
+            <h2 style="font-size:22px; margin-bottom:20px; display:flex; align-items:center;">
+              <span class="section-num">3</span> Payment Method
+            </h2>
+
+            <!-- UPI Option -->
+            <div class="payment-tab active" id="tab-upi" onclick="selectPaymentMethod('upi')">
+              <input type="radio" name="payment-method" value="upi" checked>
+              <div style="flex-grow:1;">
+                <div style="font-weight:600; font-size:14.5px; display:flex; justify-content:space-between;">
+                  <span>UPI (Google Pay, PhonePe, Paytm, BHIM)</span>
+                  <span style="color:var(--gold)">Instant ⚡</span>
+                </div>
+                <div style="font-size:12px; color:var(--muted)">Pay instantly using any UPI App or QR scan</div>
+              </div>
+            </div>
+            <div class="payment-body active" id="body-upi">
+              <label class="form-label">Enter UPI ID / VPA</label>
+              <input type="text" id="c-upi-id" class="form-input" placeholder="e.g. yourname@okhdfcbank or 9820123456@paytm" value="arjun.kapoor@okhdfcbank">
+              <div style="margin-top:10px; font-size:12px; color:var(--muted);">
+                A payment request will be sent to your UPI App upon clicking Place Order.
+              </div>
+            </div>
+
+            <!-- Card Option -->
+            <div class="payment-tab" id="tab-card" onclick="selectPaymentMethod('card')">
+              <input type="radio" name="payment-method" value="card">
+              <div style="flex-grow:1;">
+                <div style="font-weight:600; font-size:14.5px; display:flex; justify-content:space-between;">
+                  <span>Credit / Debit Card (Visa, Mastercard, RuPay, Amex)</span>
+                  <span style="color:var(--muted)">256-bit Encrypted</span>
+                </div>
+                <div style="font-size:12px; color:var(--muted)">Domestic & International bank cards accepted</div>
+              </div>
+            </div>
+            <div class="payment-body" id="body-card">
+              <div class="form-group">
+                <label class="form-label">Card Number</label>
+                <input type="text" class="form-input" placeholder="4111 2222 3333 4444" maxlength="19" value="4532 •••• •••• 9821">
+              </div>
+              <div class="form-row">
+                <div class="form-group" style="flex:1;">
+                  <label class="form-label">Expiry (MM/YY)</label>
+                  <input type="text" class="form-input" placeholder="12/28" maxlength="5" value="10/28">
+                </div>
+                <div class="form-group" style="flex:1;">
+                  <label class="form-label">CVV</label>
+                  <input type="password" class="form-input" placeholder="•••" maxlength="4" value="882">
+                </div>
+              </div>
+            </div>
+
+            <!-- COD Option -->
+            <div class="payment-tab" id="tab-cod" onclick="selectPaymentMethod('cod')">
+              <input type="radio" name="payment-method" value="cod">
+              <div style="flex-grow:1;">
+                <div style="font-weight:600; font-size:14.5px;">
+                  <span>Cash on Delivery (COD)</span>
+                </div>
+                <div style="font-size:12px; color:var(--muted)">Pay with Cash or UPI at your doorstep upon arrival</div>
+              </div>
+            </div>
+            <div class="payment-body" id="body-cod">
+              <div style="font-size:13px; color:var(--muted);">
+                ✦ Our delivery partner will present a secure UPI QR code or accept exact cash. An SMS OTP verification will be triggered upon delivery.
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div style="margin-top:28px;">
+              <button type="submit" id="place-order-btn" class="btn btn-full btn-lg">
+                <span id="btn-text">Place Order & Pay</span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Right: Order Summary -->
+        <aside class="order-summary-sidebar">
+          <h3 style="font-size:22px; margin-bottom:20px;">Order Summary</h3>
+          <div id="checkout-items-list" style="display:grid; gap:16px; margin-bottom:20px; max-height:360px; overflow-y:auto; padding-right:8px;">
+            <!-- Dynamically populated -->
+          </div>
+
+          <div class="cart-row">
+            <span>Subtotal</span>
+            <span id="co-subtotal">₹0</span>
+          </div>
+
+          <div class="cart-row" id="co-discount-row" style="display:none; color:var(--success);">
+            <span id="co-discount-label">Discount</span>
+            <span id="co-discount-val">-₹0</span>
+          </div>
+
+          <div class="cart-row">
+            <span>Shipping</span>
+            <span id="co-shipping">FREE</span>
+          </div>
+
+          <div class="cart-row" style="font-size:12px; color:var(--muted);">
+            <span>Taxes</span>
+            <span>Included (12% GST)</span>
+          </div>
+
+          <div class="cart-row total" style="margin-top:16px; padding-top:16px; border-top:1px solid var(--line);">
+            <span>Total Payable</span>
+            <span class="price" id="co-total" style="font-size:24px;">₹0</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="copy" style="padding-top:0; border-top:none; justify-content:center;">
+        <div>© 2026 Alpha Tribe Menswear Private Limited · 256-Bit SSL Encrypted</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let shippingSpeed = 'standard';
+    let currentPaymentMethod = 'upi';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cart = getCart();
+      if (cart.length === 0) {
+        // Fallback default item for demo if cart was empty
+        addToCart('casual-1', 'M', 1);
+      }
+      renderCheckoutSummary();
+    });
+
+    function renderCheckoutSummary() {
+      const cart = getCart();
+      const totals = getCartTotals();
+      const list = document.getElementById('checkout-items-list');
+
+      list.innerHTML = cart.map(item => {
+        const p = getProductById(item.productId);
+        if (!p) return '';
+        return `
+          <div style="display:flex; gap:12px; align-items:center; border-bottom:1px solid var(--line); padding-bottom:12px;">
+            <img src="${p.images[0]}" alt="${p.name}" style="width:60px; height:76px; object-fit:cover; border-radius:var(--radius-sm);">
+            <div style="flex-grow:1;">
+              <div style="font-family:var(--serif); font-size:16px; line-height:1.2;">${p.name}</div>
+              <div style="font-size:12px; color:var(--muted)">Size: ${item.size} · Qty: ${item.quantity}</div>
+            </div>
+            <div class="price" style="font-size:15px;">${formatINR(p.price * item.quantity)}</div>
+          </div>
+        `;
+      }).join('');
+
+      let shipFee = totals.shipping;
+      if (shippingSpeed === 'air') shipFee += 149;
+
+      const finalPayable = Math.max(0, totals.subtotal - totals.discount + shipFee);
+
+      document.getElementById('co-subtotal').textContent = formatINR(totals.subtotal);
+      document.getElementById('co-shipping').innerHTML = shipFee === 0 ? '<strong style="color:var(--gold)">FREE</strong>' : formatINR(shipFee);
+      document.getElementById('co-total').textContent = formatINR(finalPayable);
+      document.getElementById('btn-text').textContent = `Place Order & Pay ${formatINR(finalPayable)}`;
+
+      if (totals.discount > 0) {
+        document.getElementById('co-discount-row').style.display = 'flex';
+        document.getElementById('co-discount-label').textContent = `Discount (${totals.activePromo?.code || 'Promo'})`;
+        document.getElementById('co-discount-val').textContent = `-${formatINR(totals.discount)}`;
+      }
+    }
+
+    function selectShippingOpt(opt) {
+      shippingSpeed = opt;
+      document.getElementById('ship-opt-std').classList.toggle('active', opt === 'standard');
+      document.getElementById('ship-opt-air').classList.toggle('active', opt === 'air');
+      renderCheckoutSummary();
+    }
+
+    function selectPaymentMethod(method) {
+      currentPaymentMethod = method;
+      ['upi', 'card', 'cod'].forEach(m => {
+        document.getElementById(`tab-${m}`).classList.toggle('active', m === method);
+        document.getElementById(`body-${m}`).classList.toggle('active', m === method);
+      });
+    }
+
+    function autoLookupPincode(pin) {
+      if (pin.length === 6) {
+        const pinMap = {
+          '400050': { city: 'Mumbai', state: 'Maharashtra' },
+          '400001': { city: 'Mumbai', state: 'Maharashtra' },
+          '560001': { city: 'Bengaluru', state: 'Karnataka' },
+          '560038': { city: 'Bengaluru', state: 'Karnataka' },
+          '110001': { city: 'New Delhi', state: 'Delhi' },
+          '500034': { city: 'Hyderabad', state: 'Telangana' },
+          '600002': { city: 'Chennai', state: 'Tamil Nadu' },
+          '700001': { city: 'Kolkata', state: 'West Bengal' },
+          '411001': { city: 'Pune', state: 'Maharashtra' }
+        };
+        const loc = pinMap[pin] || { city: 'Metro Hub', state: 'India' };
+        document.getElementById('c-city').value = loc.city;
+        document.getElementById('c-state').value = loc.state;
+        showToast(`PIN Code matched: <strong>${loc.city}, ${loc.state}</strong>`);
+      }
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      const btn = document.getElementById('place-order-btn');
+      btn.disabled = true;
+      btn.innerHTML = `<span style="display:inline-block; animation:spin 1s infinite linear;">⟳</span> Authorizing Payment...`;
+
+      const orderNumber = 'AT-' + Math.floor(100000 + Math.random() * 900000);
+      const customer = {
+        name: `${document.getElementById('c-fname').value} ${document.getElementById('c-lname').value}`,
+        email: document.getElementById('c-email').value,
+        phone: document.getElementById('c-phone').value,
+        address: `${document.getElementById('c-addr').value}, ${document.getElementById('c-city').value}, ${document.getElementById('c-state').value} - ${document.getElementById('c-pincode').value}`,
+        paymentMethod: currentPaymentMethod.toUpperCase(),
+        shippingSpeed: shippingSpeed
+      };
+
+      const orderData = {
+        orderId: orderNumber,
+        date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+        customer,
+        items: getCart(),
+        totals: getCartTotals()
+      };
+
+      try {
+        localStorage.setItem('alphatribe_last_order', JSON.stringify(orderData));
+      } catch (err) {}
+
+      setTimeout(() => {
+        clearCart();
+        window.location.href = `order-confirmation.html?orderId=${orderNumber}`;
+      }, 1400);
+    }
+  </script>
+</body>
+</html>

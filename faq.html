@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Frequently Asked Questions | Alpha Tribe Menswear</title>
+  <meta name="description" content="Answers to common questions regarding sizing, delivery timelines, 7-day doorstep returns, and fabric maintenance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .faq-search-box {
+      max-width: 680px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+    .faq-search-box input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 16px 28px;
+      color: var(--text);
+      font-size: 16px;
+    }
+    .faq-search-box input:focus {
+      border-color: var(--gold);
+      outline: none;
+    }
+    .faq-cat-section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    .faq-cat-title {
+      font-size: 24px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="wrap">
+      <div>✦ Complimentary Pan-India Delivery on orders above ₹1,999 | Use Code <strong>FIRSTALPHA</strong> for 15% Off</div>
+      <div class="top-bar-links">
+        <a href="shipping.html">Track Order</a>
+        <a href="contact.html">Store Locator</a>
+        <span>INR (₹)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Header -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <button class="action-btn menu-toggle" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <a class="logo" href="index.html">
+          <span class="logo-mark"></span>
+          ALPHA TRIBE
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="looks.html">Style Guide</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-trigger-btn" aria-label="Search Garments">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          
+          <a class="action-btn" href="collections.html" title="Wishlist" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="action-badge wishlist-badge-count" style="display:none;">0</span>
+          </a>
+
+          <button class="action-btn" onclick="openCartDrawer()" aria-label="View Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="action-badge cart-badge-count" style="display:none;">0</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 48px 0 88px;">
+    <div class="wrap">
+      <!-- Header -->
+      <div class="section-head center">
+        <span class="tag">Knowledge Base</span>
+        <h1 style="font-size:clamp(36px, 5vw, 60px);">Frequently Asked Questions</h1>
+        <p>Everything you need to know about our precision fits, logistics, and doorstep service.</p>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="faq-search-box">
+        <input type="text" id="faq-search-input" placeholder="Search questions (e.g. sizing, returns, shipping, COD)..." oninput="filterFAQs(this.value)">
+      </div>
+
+      <div class="wrap-sm" id="faq-container">
+        <!-- Category 1 -->
+        <div class="faq-cat-section">
+          <h2 class="faq-cat-title"><span>✦</span> Sizing & The Alpha Fit</h2>
+
+          <div class="accordion active" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>How does the Alpha Tribe fit differ from standard slim fit?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              Standard Western slim fits constrict broad Indian shoulders, pull across the chest, or create unflattering bunching around the belt. Alpha Tribe features an engineered Athletic Taper: generous chest room, an elevated armhole radius that prevents untucking, and a clean taper toward the waist.
+            </div>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>What if my garment doesn’t fit perfectly?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              We provide 100% complimentary doorstep size exchanges. Within 7 days of delivery, visit our <a href="returns.html" style="color:var(--gold); text-decoration:underline;">Returns & Exchanges Portal</a>, enter your order number, and our courier will swap your size directly at your door.
+            </div>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>Are sizes in inches or centimeters?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              Our sizing charts display garment dimensions in inches. For tops (shirts, polos, tees), size S corresponds to 38, M to 40, L to 42, XL to 44, and XXL to 46. Denim jeans correspond directly to true waist measurement (30 to 38 inches).
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="faq-cat-section">
+          <h2 class="faq-cat-title"><span>✦</span> Pan-India Shipping & Delivery</h2>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>How fast will my order arrive?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              All orders are dispatched from our central Mumbai logistics hub within 24 hours. Metro deliveries (Mumbai, Delhi NCR, Bengaluru, Hyderabad, Chennai, Kolkata, Pune) arrive within 2–3 business days via Bluedart Air. Tier 2 and Tier 3 cities take 3–5 business days.
+            </div>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>Is Cash on Delivery (COD) supported?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              Yes, Cash on Delivery is supported across 19,000+ Indian PIN codes at zero extra charge. You may pay with cash or scan the courier’s UPI QR code directly at your doorstep.
+            </div>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>What are the shipping charges?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              Shipping is completely FREE on all orders of ₹1,999 or more. For smaller orders under ₹1,999, a nominal flat express shipping fee of ₹150 applies.
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="faq-cat-section">
+          <h2 class="faq-cat-title"><span>✦</span> 7-Day Returns & Exchanges</h2>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>What is your return & exchange window?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              You have 7 full days from the date of delivery to initiate an exchange or return. Garments must be in their original unwashed condition with tags attached.
+            </div>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>How are refunds processed?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              Once our courier picks up the garment, your refund is initiated immediately. For prepaid orders (UPI/Card), funds credit back to your original payment method in 24–48 hours. For COD orders, we transfer instantly to your verified UPI ID or bank account.
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="faq-cat-section">
+          <h2 class="faq-cat-title"><span>✦</span> Fabric Care & Integrity</h2>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>Will Alpha Tribe garments shrink after washing?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              No. All our fabrics undergo commercial pre-shrinking and enzyme softening washes before cutting. Follow our cold-wash care guidelines on the label and your garments will preserve their tailored silhouette for years.
+            </div>
+          </div>
+
+          <div class="accordion" onclick="toggleAccordion(this)">
+            <div class="accordion-header">
+              <span>How do I care for raw selvedge denim?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">
+              For raw denim purists, wear the jeans regularly for 4–6 months before the first wash to allow natural honeycombing and whiskering. When washing, turn inside out, soak in cold water with mild dark detergent, and hang dry away from direct sun.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div>
+          <a class="logo" href="index.html" style="margin-bottom:14px;">
+            <span class="logo-mark"></span>
+            ALPHA TRIBE
+          </a>
+          <p style="color:var(--muted); font-size:13.5px; line-height:1.7;">
+            Wear your Alpha. Luxury menswear engineered for the modern Indian gentleman who moves with quiet purpose.
+          </p>
+          <div class="f-badge">PAN-INDIA 2-4 DAYS EXPRESS</div>
+        </div>
+
+        <div>
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="collections.html?cat=casual-shirts">Casual Shirts</a></li>
+            <li><a href="collections.html?cat=denim-jeans">Denim Jeans</a></li>
+            <li><a href="collections.html?cat=polo-t-shirts">Polo T-Shirts</a></li>
+            <li><a href="collections.html?cat=formal-shirts">Formal Shirts</a></li>
+            <li><a href="collections.html?cat=round-neck-t-shirts">Round Neck Tees</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>The House</h4>
+          <ul>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="looks.html">Style Guide</a></li>
+            <li><a href="contact.html">Flagship Studios</a></li>
+            <li><a href="about.html#craft">Craftsmanship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Client Concierge</h4>
+          <ul>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="returns.html">7-Day Returns & Exchanges</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Stay Connected</h4>
+          <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">Sign up for private releases & VIP invites.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button class="btn btn-sm" type="submit">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="copy">
+        <div>© 2026 Alpha Tribe Menswear Private Limited. All Rights Reserved.</div>
+        <div class="copy-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping.html">Logistics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function toggleAccordion(el) {
+      el.classList.toggle('active');
+    }
+
+    function filterFAQs(query) {
+      const q = query.toLowerCase().trim();
+      document.querySelectorAll('.accordion').forEach(acc => {
+        const text = acc.textContent.toLowerCase();
+        if (!q || text.includes(q)) {
+          acc.style.display = 'block';
+          if (q) acc.classList.add('active');
+        } else {
+          acc.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
