@@ -4,196 +4,2033 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Alpha Tribe | Premium Menswear for the Modern Indian Man</title>
-  <meta name="description" content="Precision-cut casual shirts, denim jeans, polos, and formal shirts engineered for the Indian physique. Wear your Alpha.">
-  <meta name="keywords" content="men's casual shirts India, premium denim jeans men, polo t-shirts men India, formal shirts men India, Alpha Tribe menswear">
+  <meta name="description" content="Shop Alpha Tribe's premium collection of casual shirts, denim jeans, polo t-shirts, and formal shirts. Designed for confident Indian men who lead.">
+  <meta name="keywords" content="men's casual shirts India, premium denim jeans men India, polo t-shirts men India, formal shirts men India, Alpha Tribe menswear">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.alphatribe.in/">
+  <link rel="canonical" href="https://www.alpha-tribe.store/">
+
+  <!-- Open Graph & Social Metadata -->
   <meta property="og:title" content="Alpha Tribe | Premium Menswear for the Modern Indian Man">
-  <meta property="og:description" content="Precision-cut casual shirts, denim jeans, polos, and formal shirts engineered for the Indian physique. Wear your Alpha.">
+  <meta property="og:description" content="Shop Alpha Tribe's premium collection of casual shirts, denim jeans, polo t-shirts, and formal shirts. Designed for confident Indian men who lead.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
+  <meta property="og:url" content="https://www.alpha-tribe.store/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Alpha Tribe",
+    "url": "https://www.alpha-tribe.store/",
+    "description": "At Alpha Tribe, we believe clothing is more than just fabric — it's a reflection of attitude, confidence, and identity. Born with a vision to redefine everyday fashion, we bring together premium casual shirts, denim jeans, polo t-shirts, formal shirts, and round neck t-shirts designed for the modern man."
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       ALPHA TRIBE — LUXURY MENSWEAR DESIGN SYSTEM (SELF-CONTAINED)
+       ========================================================================== */
+    :root {
+      --bg: #0A0A0A;
+      --section-alt: #111111;
+      --card: #1A1A1A;
+      --card-hover: #212121;
+      --gold: #C9A84C;
+      --gold-hover: #E8C46A;
+      --gold-light: #F0D080;
+      --gold-dim: rgba(201, 168, 76, 0.14);
+      --gold-glow: rgba(201, 168, 76, 0.35);
+      --text: #F5F5F5;
+      --muted: #8A8A8A;
+      --border: #2A2A2A;
+      --success: #4ECB71;
+      --danger: #E05D5D;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+      background: var(--bg);
+      color-scheme: dark;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font: 400 15px/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.06em;
+      line-height: 1.15;
+    }
+
+    a { color: inherit; text-decoration: none; transition: color 0.25s ease; }
+    img { max-width: 100%; display: block; }
+    button, input, select, textarea { font-family: inherit; font-size: inherit; }
+
+    .wrap {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Sticky Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: #0A0A0A;
+      border-bottom: 1px solid transparent;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom-color: var(--border);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 20px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #0A0A0A;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-logo-text strong {
+      font-family: var(--serif);
+      font-size: 20px;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .brand-logo-text span {
+      font-size: 9px;
+      letter-spacing: 0.26em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      padding: 6px 0;
+      position: relative;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text);
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .icon-btn:hover { color: var(--gold); border-color: var(--border); }
+
+    .cart-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 99px;
+      background: var(--gold);
+      color: #0A0A0A;
+      font-size: 11px;
+      font-weight: 700;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-nav-cta {
+      padding: 10px 22px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--gold);
+      color: #0A0A0A;
+    }
+
+    .hamburger { display: none; }
+
+    /* Mobile Full-Screen Overlay Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: #0A0A0A;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: 32px;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-size: 34px;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 34px;
+      background: var(--gold);
+      color: #0A0A0A;
+      border: 1px solid var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-hover);
+      border-color: var(--gold-hover);
+      transform: scale(1.03);
+      box-shadow: 0 0 24px rgba(201, 168, 76, 0.45);
+    }
+
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 34px;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-outline-white:hover {
+      background: var(--text);
+      color: #0A0A0A;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: #0A0A0A;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(201, 168, 76, 0.11) 0%, transparent 62%),
+        radial-gradient(rgba(201, 168, 76, 0.18) 1px, transparent 1px);
+      background-size: 100% 100%, 34px 34px;
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .pre-heading {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7.5vw, 80px);
+      color: var(--text);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroFadeUp 0.8s ease forwards;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 38px;
+      line-height: 1.7;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroFadeUp 0.8s ease 0.2s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroFadeUp 0.8s ease 0.4s forwards;
+    }
+
+    @keyframes heroFadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: pulseLine 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulseLine {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* Brand Strip */
+    .brand-strip {
+      background: #0A0A0A;
+      border-top: 1px solid rgba(201, 168, 76, 0.35);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+      padding: 36px 24px;
+    }
+
+    .strip-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .strip-stat strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.5vw, 38px);
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .strip-stat span {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    /* Common Section Styling */
+    section { padding: 96px 0; }
+    .section-alt { background: var(--section-alt); }
+
+    .sec-head {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+
+    .sec-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .sec-head h2 {
+      font-size: clamp(32px, 4.5vw, 48px);
+      color: var(--text);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Collections & Product Cards */
+    .cat-filter {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .filter-pill {
+      padding: 9px 20px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-pill:hover, .filter-pill.active {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: #0A0A0A;
+      font-weight: 600;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.25);
+    }
+
+    .product-media {
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(145deg, #22201b 0%, #111111 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .product-media img { transform: scale(1.05); }
+
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(10, 10, 10, 0.88);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+
+    .product-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-cat {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+
+    .product-title {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .product-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .product-footer {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .product-price {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .view-link {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.85;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .view-link { opacity: 1; transform: translateX(3px); }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-visual {
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(160deg, #241f16 0%, #111111 55%, #0A0A0A 100%);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      margin-bottom: 22px;
+    }
+
+    .about-copy p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .text-gold-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .text-gold-link:hover { color: var(--gold-hover); }
+
+    /* Why Alpha Tribe (USP) */
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .usp-card {
+      background: var(--section-alt);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      padding: 32px 24px;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .usp-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+
+    .usp-icon {
+      font-size: 26px;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .usp-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .usp-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* Style Guide */
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .style-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .style-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+
+    .style-img {
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(145deg, #1f1c16, #0f0f0f);
+      overflow: hidden;
+    }
+
+    .style-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .style-body { padding: 24px; }
+
+    .style-body h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .style-body p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* Testimonials */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .testi-card {
+      background: var(--section-alt);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 32px;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .testi-card:hover { transform: translateY(-3px); }
+
+    .testi-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 21px;
+      line-height: 1.55;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .testi-author {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .testi-stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-size: 14px;
+    }
+
+    /* Newsletter Band */
+    .newsletter-band {
+      background: radial-gradient(circle at 50% 50%, rgba(201, 168, 76, 0.14) 0%, #0A0A0A 72%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter-inner {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .newsletter-inner h2 {
+      font-size: clamp(32px, 4.5vw, 46px);
+      margin-bottom: 12px;
+    }
+
+    .newsletter-inner p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto 14px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      background: #111111;
+      border: 1px solid var(--gold);
+      color: var(--text);
+      padding: 14px 18px;
+      border-radius: 3px;
+      outline: none;
+    }
+
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      background: #0A0A0A;
+      padding: 72px 0 32px;
+      color: var(--muted);
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 36px;
+      margin-bottom: 48px;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+    }
+
+    .footer-tagline {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--gold);
+      margin-top: 14px;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 36px;
+      margin-bottom: 52px;
+    }
+
+    .footer-col h3 {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      font-size: 14px;
+    }
+
+    .footer-col a:hover { color: var(--gold); }
+
+    .social-row {
+      display: flex;
+      gap: 14px;
+    }
+
+    .social-link {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--gold);
+      color: #0A0A0A;
+      border-color: var(--gold);
+    }
+
+    .footer-bottom {
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer-bottom-links {
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom-links a:hover { color: var(--gold); }
+
+    .footer-motto {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Modals & Drawers (Product Detail, Cart, COD Checkout) */
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(6px);
+      z-index: 300;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .backdrop.open { opacity: 1; pointer-events: auto; }
+
+    .modal-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -48%) scale(0.96);
+      width: calc(100% - 32px);
+      max-width: 880px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background: #141414;
+      border: 1px solid var(--gold);
+      border-radius: 6px;
+      z-index: 310;
+      padding: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .modal-box.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close:hover { color: var(--gold); }
+
+    .pdp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .pdp-img {
+      aspect-ratio: 4 / 5;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0A0A0A;
+    }
+
+    .pdp-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .size-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 14px 0 22px;
+    }
+
+    .size-btn {
+      min-width: 46px;
+      height: 44px;
+      padding: 0 12px;
+      background: #0A0A0A;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    .size-btn.active, .size-btn:hover {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: #0A0A0A;
+    }
+
+    .pdp-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    /* Cart Drawer */
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 430px;
+      background: #121212;
+      border-left: 1px solid var(--border);
+      z-index: 320;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open { transform: translateX(0); }
+
+    .cart-head {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 14px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item img {
+      width: 68px;
+      height: 86px;
+      object-fit: cover;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .qty-box {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      margin-top: 8px;
+    }
+
+    .qty-box button {
+      width: 28px;
+      height: 28px;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .qty-box span {
+      width: 28px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .cart-foot {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border);
+      background: #0A0A0A;
+    }
+
+    /* COD Checkout Form */
+    .form-field { margin-bottom: 16px; }
+    .form-field label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+    .form-field input, .form-field textarea {
+      width: 100%;
+      background: #0A0A0A;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 3px;
+      outline: none;
+    }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--gold); }
+
+    .cod-bar {
+      background: #0A0A0A;
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 4px;
+      margin-bottom: 18px;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+
+    .cod-bar-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .cod-bar-item:last-child { border-bottom: none; }
+
+    /* AI Chatbot */
+    .chat-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 250;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #0A0A0A;
+      border: none;
+      box-shadow: 0 8px 28px rgba(201, 168, 76, 0.45);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .chat-fab:hover { transform: scale(1.06); background: var(--gold-hover); }
+
+    .chat-window {
+      position: fixed;
+      bottom: 92px;
+      right: 24px;
+      width: calc(100% - 48px);
+      max-width: 360px;
+      background: #141414;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      z-index: 250;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+    }
+
+    .chat-window.open { display: flex; }
+
+    .chat-header {
+      background: #0A0A0A;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-messages {
+      height: 270px;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13.5px;
+    }
+
+    .msg-bot, .msg-user {
+      padding: 10px 14px;
+      border-radius: 6px;
+      max-width: 85%;
+      line-height: 1.5;
+    }
+
+    .msg-bot {
+      background: #1F1F1F;
+      border-left: 2px solid var(--gold);
+      color: var(--text);
+      align-self: flex-start;
+    }
+
+    .msg-user {
+      background: var(--gold);
+      color: #0A0A0A;
+      font-weight: 500;
+      align-self: flex-end;
+    }
+
+    .chat-input-row {
+      display: flex;
+      border-top: 1px solid var(--border);
+      background: #0A0A0A;
+    }
+
+    .chat-input-row input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      padding: 12px 14px;
+      outline: none;
+      font-size: 13px;
+    }
+
+    .chat-input-row button {
+      background: var(--gold);
+      color: #0A0A0A;
+      border: none;
+      padding: 0 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: #1A1A1A;
+      border: 1px solid var(--gold);
+      color: var(--text);
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-size: 13px;
+      z-index: 400;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .collections-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .usp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .btn-nav-cta { display: none; }
+      .hamburger { display: inline-flex; }
+      .about-grid, .pdp-grid { grid-template-columns: 1fr; gap: 32px; }
+      .style-grid, .testi-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .collections-grid { grid-template-columns: 1fr; }
+      .strip-grid { grid-template-columns: 1fr; gap: 18px; }
+      .newsletter-form { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; }
+      section { padding: 68px 0; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-bar">
-    <div class="wrap">
-      <div>✦ Complimentary Pan-India Delivery on orders above ₹1,999 | Use Code <strong>FIRSTALPHA</strong> for 15% Off</div>
-      <div class="top-bar-links">
-        <a href="shipping.html">Track Order</a>
-        <a href="contact.html">Store Locator</a>
-        <span>INR (₹)</span>
-      </div>
-    </div>
-  </div>
+  <!-- Sticky Navbar -->
+  <header id="navbar">
+    <div class="wrap nav-bar">
+      <a href="#home" class="brand-logo" aria-label="Alpha Tribe Home">
+        <!-- Gold Crowned Lion Crest Emblem (48px height, seamless #0A0A0A) -->
+        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M12 14L32 8L52 14V34C52 46.5 43.2 54.8 32 58C20.8 54.8 12 46.5 12 34V14Z" stroke="#C9A84C" stroke-width="2.2" fill="#0A0A0A"/>
+          <path d="M23 19L26 14L32 18L38 14L41 19H23Z" fill="#C9A84C"/>
+          <path d="M32 23C26.5 23 22 27.2 22 32.5C22 37.8 26.5 43 32 45C37.5 43 42 37.8 42 32.5C42 27.2 37.5 23 32 23Z" stroke="#C9A84C" stroke-width="2"/>
+          <circle cx="28.5" cy="31" r="1.5" fill="#C9A84C"/>
+          <circle cx="35.5" cy="31" r="1.5" fill="#C9A84C"/>
+          <path d="M29.5 36.5L32 39L34.5 36.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-logo-text">
+          <strong>ALPHA TRIBE</strong>
+          <span>Est. India</span>
+        </span>
+      </a>
 
-  <!-- Global Header -->
-  <header id="site-header">
-    <div class="wrap">
       <nav aria-label="Primary Navigation">
-        <button type="button" class="action-btn menu-toggle" aria-label="Open Navigation Menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#style-guide">Style Guide</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <button type="button" class="icon-btn" onclick="openCart()" aria-label="Open Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-count">0</span>
         </button>
 
-        <a class="logo" href="index.html">
-          <span class="logo-mark" aria-hidden="true"></span>
-          ALPHA TRIBE
-        </a>
+        <a href="#collections" class="btn-nav-cta">Shop Now</a>
 
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="collections.html">Collections</a></li>
-          <li><a href="looks.html">Style Guide</a></li>
-          <li><a href="about.html">Our Story</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-        <div class="nav-actions">
-          <button type="button" class="action-btn search-trigger-btn" aria-label="Search Garments">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </button>
-
-          <a class="action-btn" href="collections.html" title="Wishlist" aria-label="Wishlist">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            <span class="action-badge wishlist-badge-count" style="display:none;">0</span>
-          </a>
-
-          <button type="button" class="action-btn" onclick="if (typeof openCartDrawer === 'function') openCartDrawer();" aria-label="View Shopping Bag">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-            <span class="action-badge cart-badge-count" style="display:none;">0</span>
-          </button>
-
-          <a href="collections.html" class="btn btn-sm">Shop Now</a>
-        </div>
-      </nav>
+        <button type="button" class="icon-btn hamburger" onclick="toggleMobileMenu(true)" aria-label="Open Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
+  <!-- Full-Screen Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile Navigation">
+    <button type="button" class="mobile-menu-close" onclick="toggleMobileMenu(false)" aria-label="Close Menu">&times;</button>
+    <a href="#home" onclick="toggleMobileMenu(false)">Home</a>
+    <a href="#collections" onclick="toggleMobileMenu(false)">Collections</a>
+    <a href="#about" onclick="toggleMobileMenu(false)">About</a>
+    <a href="#style-guide" onclick="toggleMobileMenu(false)">Style Guide</a>
+    <a href="#contact" onclick="toggleMobileMenu(false)">Contact</a>
+    <button type="button" class="btn-gold" onclick="toggleMobileMenu(false); openCart();">View Bag</button>
+  </div>
+
   <main>
     <!-- Hero Section -->
-    <section class="hero">
-      <div class="wrap">
-        <span class="tag">The Royal Edition · Season 2026</span>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <span class="pre-heading">THE NEW COLLECTION IS HERE</span>
         <h1>Define Your Edge</h1>
-        <p>Premium menswear engineered for the modern Indian physique. Precision cuts in casual shirts, Japanese selvedge denim, Supima polos and Italian-weave formals</p>
-
-        <div class="hero-cta">
-          <a class="btn" href="collections.html">Explore Collections</a>
-          <a class="btn ghost" href="looks.html">View Style Guide</a>
+        <p class="hero-sub">Premium menswear for the modern Indian man — casual shirts, denim, polos, formals, and more</p>
+        <div class="hero-actions">
+          <a href="#collections" class="btn-gold">Explore Collections</a>
+          <a href="#about" class="btn-outline-white">Our Story</a>
         </div>
+      </div>
 
-        <div class="stats">
-          <div><b>500+</b><span>Styles Handcrafted</span></div>
-          <div><b>100%</b><span>Giza &amp; Supima Cotton</span></div>
-          <div><b>10,000+</b><span>Gentlemen Served</span></div>
-          <div><b>4.9 ★</b><span>Customer Rating</span></div>
+      <div class="scroll-cue" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Brand Strip -->
+    <section class="brand-strip" aria-label="Brand Highlights">
+      <div class="strip-grid">
+        <div class="strip-stat">
+          <strong>500+ Styles</strong>
+          <span>Curated Menswear</span>
+        </div>
+        <div class="strip-stat">
+          <strong>Premium Fabrics</strong>
+          <span>Engineered Comfort</span>
+        </div>
+        <div class="strip-stat">
+          <strong>10,000+ Happy Men</strong>
+          <span>Across India</span>
         </div>
       </div>
     </section>
 
-    <!-- Categories Showcase -->
-    <section style="background: var(--surface);">
+    <!-- Collections Section -->
+    <section id="collections">
       <div class="wrap">
-        <div class="section-head center">
-          <span class="tag">Curated Categories</span>
-          <h2>Dressing The Man of Action</h2>
-          <p>Every piece in our catalog is cut with intention, balancing timeless tailoring with breathable ease</p>
+        <div class="sec-head reveal">
+          <span class="sec-label">WHAT WE MAKE</span>
+          <h2>Shop the Collection</h2>
         </div>
 
-        <div class="grid">
-          <a class="card" href="collections.html?cat=casual-shirts">
-            <div class="card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Alpha Tribe Casual Shirts for Men India" loading="lazy">
-            </div>
-            <div class="card-info" style="text-align:center;">
-              <h3 class="card-title">Casual Shirts</h3>
-              <p style="color:var(--muted); font-size:13px; margin:0;">Effortless cool, daily motion</p>
-            </div>
-          </a>
-
-          <a class="card" href="collections.html?cat=denim-jeans">
-            <div class="card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Alpha Tribe Denim Jeans for Men India" loading="lazy">
-            </div>
-            <div class="card-info" style="text-align:center;">
-              <h3 class="card-title">Denim Jeans</h3>
-              <p style="color:var(--muted); font-size:13px; margin:0;">12.5–14oz Ring-spun &amp; Selvedge</p>
-            </div>
-          </a>
-
-          <a class="card" href="collections.html?cat=polo-t-shirts">
-            <div class="card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Alpha Tribe Polo T-Shirts for Men India" loading="lazy">
-            </div>
-            <div class="card-info" style="text-align:center;">
-              <h3 class="card-title">Polo T-Shirts</h3>
-              <p style="color:var(--muted); font-size:13px; margin:0;">Anti-curl Mercerized Supima</p>
-            </div>
-          </a>
-
-          <a class="card" href="collections.html?cat=formal-shirts">
-            <div class="card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Alpha Tribe Formal Shirts for Men India" loading="lazy">
-            </div>
-            <div class="card-info" style="text-align:center;">
-              <h3 class="card-title">Formal Shirts</h3>
-              <p style="color:var(--muted); font-size:13px; margin:0;">Two-ply Egyptian Giza cotton</p>
-            </div>
-          </a>
-
-          <a class="card" href="collections.html?cat=round-neck-t-shirts">
-            <div class="card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Alpha Tribe Round Neck T-Shirts for Men India" loading="lazy">
-            </div>
-            <div class="card-info" style="text-align:center;">
-              <h3 class="card-title">Round Neck Tees</h3>
-              <p style="color:var(--muted); font-size:13px; margin:0;">240 GSM heavyweights</p>
-            </div>
-          </a>
+        <div class="cat-filter reveal" role="tablist" aria-label="Filter Collections">
+          <button type="button" class="filter-pill active" onclick="filterProducts('all', this)">All</button>
+          <button type="button" class="filter-pill" onclick="filterProducts('Casual Shirts', this)">Casual Shirts</button>
+          <button type="button" class="filter-pill" onclick="filterProducts('Denim Jeans', this)">Denim Jeans</button>
+          <button type="button" class="filter-pill" onclick="filterProducts('Polo T-Shirts', this)">Polo T-Shirts</button>
+          <button type="button" class="filter-pill" onclick="filterProducts('Formal Shirts', this)">Formal Shirts</button>
+          <button type="button" class="filter-pill" onclick="filterProducts('Round Neck T-Shirts', this)">Round Neck T-Shirts</button>
         </div>
+
+        <div class="collections-grid" id="collections-grid"></div>
       </div>
     </section>
 
-    <!-- Bestseller Showcase -->
-    <section id="featured-products">
+    <!-- About Section -->
+    <section id="about" class="section-alt">
       <div class="wrap">
-        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; flex-wrap:wrap; gap:16px;">
-          <div>
-            <span class="tag">Tribe Favorites</span>
-            <h2>Most Coveted Garments</h2>
-          </div>
-          <a href="collections.html" class="btn ghost btn-sm">View All 16+ Styles →</a>
-        </div>
-
-        <div class="grid" id="featured-grid">
-          <!-- Populated by js/products.js & inline script -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Craftsmanship / Brand Philosophy -->
-    <section style="background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-      <div class="wrap">
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:56px; align-items:center;">
-          <div style="position:relative;">
-            <img src="https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Alpha Tribe menswear craftsmanship and tailoring" loading="lazy" style="border-radius:var(--radius-sm); border:1px solid var(--line); width:100%; aspect-ratio:4/3; object-fit:cover;">
-            <div style="position:absolute; bottom:20px; right:20px; background:rgba(10,10,10,0.9); border:1px solid var(--gold); padding:16px 24px; border-radius:var(--radius-sm);">
-              <span style="font-family:var(--serif); font-size:24px; color:var(--gold); display:block; font-weight:700;">100% Made in India</span>
-              <span style="font-size:12px; color:var(--muted); text-transform:uppercase;">Fair-wage master tailors</span>
-            </div>
+        <div class="about-grid">
+          <div class="about-visual reveal">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=80" alt="Alpha Tribe luxury menswear tailoring and visual" loading="lazy">
           </div>
 
+          <div class="about-copy reveal">
+            <span class="sec-label">OUR STORY</span>
+            <h2>Not Just Clothing. A Mindset</h2>
+            <p>
+              At Alpha Tribe, we believe clothing is more than just fabric — it's a reflection of attitude, confidence, and identity. Born with a vision to redefine everyday fashion, we bring together premium casual shirts, denim jeans, polo t-shirts, formal shirts, and round neck t-shirts designed for the modern man. Clean cuts, premium fabrics, fits that move with you. Alpha Tribe isn't just a brand — it's a mindset. It's for those who lead.
+            </p>
+            <a href="#newsletter" class="text-gold-link">Join the Tribe →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Alpha Tribe (USP Section) -->
+    <section id="why-us">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">WHY CHOOSE US</span>
+          <h2>Built Different</h2>
+        </div>
+
+        <div class="usp-grid">
+          <article class="usp-card reveal">
+            <span class="usp-icon" aria-hidden="true">🎯</span>
+            <h3>Precision Fit</h3>
+            <p>Cuts engineered for the Indian physique</p>
+          </article>
+          <article class="usp-card reveal">
+            <span class="usp-icon" aria-hidden="true">🧵</span>
+            <h3>Premium Fabrics</h3>
+            <p>Sourced for comfort, built for durability</p>
+          </article>
+          <article class="usp-card reveal">
+            <span class="usp-icon" aria-hidden="true">✨</span>
+            <h3>Modern Aesthetics</h3>
+            <p>Clean designs with a regal edge</p>
+          </article>
+          <article class="usp-card reveal">
+            <span class="usp-icon" aria-hidden="true">🚚</span>
+            <h3>Pan-India Delivery</h3>
+            <p>Fast shipping, zero compromise</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Style Guide / Lookbook -->
+    <section id="style-guide" class="section-alt">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">STYLE INSPIRATION</span>
+          <h2>How to Wear Your Alpha</h2>
+        </div>
+
+        <div class="style-grid">
+          <article class="style-card reveal">
+            <div class="style-img">
+              <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80" alt="How to style formal shirt men India - The Office Alpha" loading="lazy">
+            </div>
+            <div class="style-body">
+              <h3>The Office Alpha</h3>
+              <p>Pair our light blue formal shirt with tailored beige chinos and a dark leather belt. Tuck it in, keep the collar crisp, and let the fit speak</p>
+            </div>
+          </article>
+
+          <article class="style-card reveal">
+            <div class="style-img">
+              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="How to style casual shirt and denim men India - Weekend Warrior" loading="lazy">
+            </div>
+            <div class="style-body">
+              <h3>Weekend Warrior</h3>
+              <p>Layer a grey checkered casual shirt over light blue regular-fit denim jeans. Roll the sleeves twice and finish with clean white sneakers</p>
+            </div>
+          </article>
+
+          <article class="style-card reveal">
+            <div class="style-img">
+              <img src="https://images.unsplash.com/photo-1625910513413-722394747c34?auto=format&fit=crop&w=800&q=80" alt="How to style polo t-shirt with jeans men India - Night Out Ready" loading="lazy">
+            </div>
+            <div class="style-body">
+              <h3>Night Out Ready</h3>
+              <p>Style a structured polo t-shirt with dark indigo jeans and a minimalist watch. Sharp, breathable, and effortless after sundown</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">THE TRIBE SPEAKS</span>
+          <h2>Real Men. Real Style</h2>
+        </div>
+
+        <div class="testi-grid">
+          <article class="testi-card reveal">
+            <p class="testi-quote">“The formal shirt fits like it was made for me. Compliments every single day at work.”</p>
+            <div class="testi-author">Arjun M., Mumbai</div>
+            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </article>
+
+          <article class="testi-card reveal">
+            <p class="testi-quote">“Finally a brand that gets the Indian build right. The jeans are my new everyday pair.”</p>
+            <div class="testi-author">Rohan S., Delhi</div>
+            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </article>
+
+          <article class="testi-card reveal">
+            <p class="testi-quote">“Premium feel without the attitude. The polo is now my weekend uniform.”</p>
+            <div class="testi-author">Karan P., Bangalore</div>
+            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-band" id="newsletter">
+      <div class="newsletter-inner reveal">
+        <h2>Join 10,000+ Alpha Men</h2>
+        <p>Get exclusive drops, style guides &amp; first access to new collections</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" id="newsletter-email" placeholder="Enter your email address" required aria-label="Email address">
+          <button type="submit" class="btn-gold">Join the Tribe</button>
+        </form>
+        <div class="newsletter-note">No spam. Just Alpha.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <!-- 56px Centered Crowned Lion Emblem -->
+        <svg width="56" height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M12 14L32 8L52 14V34C52 46.5 43.2 54.8 32 58C20.8 54.8 12 46.5 12 34V14Z" stroke="#C9A84C" stroke-width="2.2" fill="#0A0A0A"/>
+          <path d="M23 19L26 14L32 18L38 14L41 19H23Z" fill="#C9A84C"/>
+          <path d="M32 23C26.5 23 22 27.2 22 32.5C22 37.8 26.5 43 32 45C37.5 43 42 37.8 42 32.5C42 27.2 37.5 23 32 23Z" stroke="#C9A84C" stroke-width="2"/>
+          <circle cx="28.5" cy="31" r="1.5" fill="#C9A84C"/>
+          <circle cx="35.5" cy="31" r="1.5" fill="#C9A84C"/>
+          <path d="M29.5 36.5L32 39L34.5 36.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div class="footer-tagline">Wear Your Alpha.</div>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="#collections" onclick="filterProducts('Casual Shirts')">Casual Shirts</a></li>
+            <li><a href="#collections" onclick="filterProducts('Denim Jeans')">Denim Jeans</a></li>
+            <li><a href="#collections" onclick="filterProducts('Polo T-Shirts')">Polo T-Shirts</a></li>
+            <li><a href="#collections" onclick="filterProducts('Formal Shirts')">Formal Shirts</a></li>
+            <li><a href="#collections" onclick="filterProducts('Round Neck T-Shirts')">Round Neck Tees</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#why-us">Careers</a></li>
+            <li><a href="#style-guide">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Help</h3>
+          <ul>
+            <li><a href="#newsletter" onclick="toggleChat(true)">FAQ</a></li>
+            <li><a href="#newsletter" onclick="toggleChat(true)">Returns</a></li>
+            <li><a href="#newsletter" onclick="toggleChat(true)">Shipping Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <div class="social-row">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Alpha Tribe Instagram">IG</a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Alpha Tribe Facebook">FB</a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Alpha Tribe YouTube">YT</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-links">
+          © 2025 Alpha Tribe. All rights reserved. | <a href="#contact">Privacy Policy</a> | <a href="#contact">Terms of Service</a>
+        </div>
+        <div class="footer-motto">For those who lead.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Backdrop -->
+  <div class="backdrop" id="backdrop" onclick="closeAllOverlays()"></div>
+
+  <!-- Product Detail Modal -->
+  <div class="modal-box" id="pdp-modal" role="dialog" aria-modal="true" aria-label="Product Details">
+    <button type="button" class="modal-close" onclick="closeAllOverlays()" aria-label="Close Product Details">&times;</button>
+    <div id="pdp-content"></div>
+  </div>
+
+  <!-- COD Payment Gateway Modal -->
+  <div class="modal-box" id="cod-modal" role="dialog" aria-modal="true" aria-label="Cash on Delivery Checkout">
+    <button type="button" class="modal-close" onclick="closeAllOverlays()" aria-label="Close Checkout">&times;</button>
+    <span class="sec-label">CASH ON DELIVERY GATEWAY</span>
+    <h2 style="font-size:32px; margin-bottom:16px;">Complete Your Order</h2>
+
+    <div class="cod-bar" id="cod-items-bar" aria-label="Order Item Adjusters"></div>
+
+    <form onsubmit="submitCODOrder(event)">
+      <div class="form-field">
+        <label for="cust-name">Customer Name</label>
+        <input type="text" id="cust-name" required minlength="2" placeholder="Enter your full name">
+      </div>
+      <div class="form-field">
+        <label for="cust-phone">Phone Number</label>
+        <input type="tel" id="cust-phone" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit Indian mobile number">
+      </div>
+      <div class="form-field">
+        <label for="cust-pincode">Pincode</label>
+        <input type="text" id="cust-pincode" required pattern="[0-9]{6}" maxlength="6" placeholder="6-digit delivery pincode">
+      </div>
+      <div class="form-field">
+        <label for="cust-address">Full Delivery Address</label>
+        <textarea id="cust-address" rows="3" required minlength="8" placeholder="House/Flat No., Street, Landmark, City, State"></textarea>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; font-weight:600;">
+        <span>Total Payable (Cash on Delivery)</span>
+        <span style="color:var(--gold); font-size:20px;" id="cod-total">₹0</span>
+      </div>
+      <button type="submit" class="btn-gold" style="width:100%;">Place Cash on Delivery Order</button>
+    </form>
+  </div>
+
+  <!-- Slide-Over Shopping Bag -->
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Bag">
+    <div class="cart-head">
+      <h3 style="font-size:24px;">Your Alpha Bag</h3>
+      <button type="button" class="modal-close" style="position:static;" onclick="closeAllOverlays()" aria-label="Close Bag">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-foot">
+      <div style="display:flex; justify-content:space-between; margin-bottom:14px; font-weight:600;">
+        <span>Subtotal</span>
+        <span style="color:var(--gold); font-size:18px;" id="cart-subtotal">₹0</span>
+      </div>
+      <button type="button" class="btn-gold" style="width:100%;" onclick="openCODCheckout()">Proceed to COD Checkout</button>
+    </div>
+  </aside>
+
+  <!-- AI Style & Customer Guidance Chatbot -->
+  <button type="button" class="chat-fab" onclick="toggleChat()" aria-label="Open Alpha Concierge Chatbot">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+
+  <div class="chat-window" id="chat-window" role="dialog" aria-label="Alpha Tribe Concierge">
+    <div class="chat-header">
+      <div>
+        <strong style="color:var(--gold); font-family:var(--serif); font-size:18px;">Alpha Concierge</strong>
+        <div style="font-size:11px; color:var(--muted);">Style &amp; Order Guidance</div>
+      </div>
+      <button type="button" class="modal-close" style="position:static; font-size:22px;" onclick="toggleChat(false)" aria-label="Close Chat">&times;</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="msg-bot">Welcome to Alpha Tribe. Ask me about our shirts, denim, polos, sizing for the Indian physique, or Cash on Delivery orders.</div>
+    </div>
+    <form class="chat-input-row" onsubmit="sendChatMessage(event)">
+      <input type="text" id="chat-input" placeholder="Ask about products, fit, COD..." aria-label="Ask Alpha Concierge">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const PRODUCTS = [
+      {
+        id: 'casual-shirt',
+        category: 'Casual Shirts',
+        name: 'Grey Checkered Casual Shirt',
+        tagline: 'Effortless cool, every day.',
+        price: 1299,
+        badge: 'Bestseller',
+        image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
+        description: 'Tailored from breathable cotton twill in a refined grey check pattern. Cut with broader shoulders and a clean taper for all-day Indian climate comfort.'
+      },
+      {
+        id: 'denim-jeans',
+        category: 'Denim Jeans',
+        name: 'Light Blue Regular Fit Jeans',
+        tagline: 'Cut for movement. Built to last.',
+        price: 1499,
+        badge: 'Signature Fit',
+        image: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80',
+        description: 'Mid-weight stretch denim engineered for athletic Indian thighs and a sharp straight-tapered leg opening.'
+      },
+      {
+        id: 'polo-tshirt',
+        category: 'Polo T-Shirts',
+        name: 'Solid Grey Polo T-Shirt',
+        tagline: 'Smart casual, redefined.',
+        price: 899,
+        badge: 'Top Rated',
+        image: 'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80',
+        description: 'Fine pique knit polo featuring an anti-curl structured collar and athletic sleeve hem that frames the arms.'
+      },
+      {
+        id: 'formal-shirt',
+        category: 'Formal Shirts',
+        name: 'Light Blue Solid Formal Shirt',
+        tagline: 'Dress sharp. Lead sharp.',
+        price: 1399,
+        badge: 'Boardroom Essential',
+        image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80',
+        description: 'Crisp two-ply cotton formal shirt with reinforced collar stays and wrinkle-resistant finish for high-stakes meetings.'
+      },
+      {
+        id: 'round-neck-tee',
+        category: 'Round Neck T-Shirts',
+        name: 'Yellow Striped Round Neck T-Shirt',
+        tagline: 'Basics done premium.',
+        price: 599,
+        badge: 'New Drop',
+        image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
+        description: 'Combed heavy-gauge cotton crew neck tee with a ribbed collar that retains its sharp silhouette wash after wash.'
+      }
+    ];
+
+    let cart = JSON.parse(localStorage.getItem('alpha_cart') || '[]');
+    let selectedSize = 'M';
+
+    function formatINR(num) {
+      return '₹' + Number(num).toLocaleString('en-IN');
+    }
+
+    function showToast(text) {
+      const el = document.getElementById('toast');
+      el.textContent = text;
+      el.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
+    }
+
+    function renderCollections(category = 'all') {
+      const grid = document.getElementById('collections-grid');
+      const items = category === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === category);
+      grid.innerHTML = items.map(p => `
+        <article class="product-card reveal visible" onclick="openPDP('${p.id}')">
+          <div class="product-media">
+            <img src="${p.image}" alt="Alpha Tribe ${p.name} for men India" loading="lazy">
+            <span class="product-tag">${p.badge}</span>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">${p.category}</div>
+            <h3 class="product-title">${p.name}</h3>
+            <p class="product-tagline">${p.tagline}</p>
+            <div class="product-footer">
+              <span class="product-price">${formatINR(p.price)}</span>
+              <span class="view-link">View Collection →</span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterProducts(category, btn) {
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderCollections(category);
+    }
+
+    function openPDP(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+      selectedSize = 'M';
+      document.getElementById('pdp-content').innerHTML = `
+        <div class="pdp-grid">
+          <div class="pdp-img">
+            <img src="${p.image}" alt="Alpha Tribe ${p.name}">
+          </div>
           <div>
-            <span class="tag">Our Heritage &amp; Cut</span>
-            <h2 style="margin-bottom:20px;">Not Just Clothing<br>A Quiet Dominance</h2>
-            <p style="color:var(--muted); line-height:1.8;">
-              At Alpha Tribe, we believe clothing is more than just fabric — it's a reflection of attitude, confidence, and identity. Born with a vision to redefine everyday fashion, we bring together premium casual shirts, denim jeans, polo t-shirts, formal shirts, and round neck t-shirts designed for the modern man.
-            </p>
-            <p style="color:var(--muted); line-height:1.8;">
-              Clean cuts, premium fabrics, fits that move with you. Alpha Tribe isn't just a brand — it's a mindset. It's for those who lead.
-            </p>
-            <div style="margin-top:32px; display:flex; gap:16
+            <span class="sec-label">${p.category}</span>
+            <h2 style="font-size:32px; margin-bottom:8px;">${p.name}</h2>
+            <div style="font-size:22px; color:var(--gold); font-weight:600; margin-bottom:14px;">${formatINR(p.price)}</div>
+            <p style="color:var(--muted); font-size:14.5px; line-height:1.7;">${p.description}</p>
+            <div style="margin-top:18px; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-light);">Select Size</div>
+            <div class="size-row">
+              ${['S', 'M', 'L', 'XL', 'XXL'].map(s => `
+                <button type="button" class="size-btn ${s === 'M' ? 'active' : ''}" onclick="selectSize('${s}', this)">${s}</button>
+              `).join('')}
+            </div>
+            <div class="pdp-actions">
+              <button type="button" class="btn-outline-white" onclick="addToCart('${p.id}', selectedSize)">Add to Cart</button>
+              <button type="button" class="btn-gold" onclick="buyNow('${p.id}', selectedSize)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      `;
+      closeAllOverlays(false);
+      document.getElementById('backdrop').classList.add('open');
+      document.getElementById('pdp-modal').classList.add('open');
+    }
+
+    function selectSize(size, btn) {
+      selectedSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function saveCart() {
+      localStorage.setItem('alpha_cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function addToCart(id, size = 'M') {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+      const existing = cart.find(i => i.id === id && i.size === size);
+      if (existing) existing.qty += 1;
+      else cart.push({ id: p.id, name: p.name, price: p.price, image: p.image, size, qty: 1 });
+      saveCart();
+      showToast(`${p.name} (${size}) added to your Alpha bag`);
+    }
+
+    function buyNow(id, size = 'M') {
+      addToCart(id, size);
+      openCODCheckout();
+    }
+
+    function changeQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) cart.splice(index, 1);
+      saveCart();
+      renderCODBar();
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((acc, i) => acc + i.qty, 0);
+      const badge = document.getElementById('cart-count');
+      badge.textContent = totalItems;
+      badge.style.display = totalItems > 0 ? 'flex' : 'none';
+
+      const list = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        list.innerHTML = '<p style="color:var(--muted); text-align:center; margin-top:40px;">Your Alpha bag is currently empty.</p>';
+      } else {
+        list.innerHTML = cart.map((item, idx) => `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div style="flex:1;">
+              <div style="font-family:var(--serif); font-size:18px;">${item.name}</div>
+              <div style="font-size:12px; color:var(--muted);">Size: ${item.size} · ${formatINR(item.price)}</div>
+              <div class="qty-box">
+                <button type="button" onclick="changeQty(${idx}, -1)" aria-label="Decrease quantity">−</button>
+                <span>${item.qty}</span>
+                <button type="button" onclick="changeQty(${idx}, 1)" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const subtotal = cart.reduce((acc, i) => acc + i.price * i.qty, 0);
+      document.getElementById('cart-subtotal').textContent = formatINR(subtotal);
+      document.getElementById('cod-total').textContent = formatINR(subtotal);
+    }
+
+    function openCart() {
+      closeAllOverlays(false);
+      updateCartUI();
+      document.getElementById('backdrop').classList.add('open');
+      document.getElementById('cart-drawer').classList.add('open');
+    }
+
+    function renderCODBar() {
+      const bar = document.getElementById('cod-items-bar');
+      if (cart.length === 0) {
+        bar.innerHTML = '<div style="color:var(--muted); font-size:13px;">Add at least one item from the collection to place an order.</div>';
+        return;
+      }
+      bar.innerHTML = cart.map((item, idx) => `
+        <div class="cod-bar-item">
+          <span>${item.name} (${item.size}) — ${formatINR(item.price * item.qty)}</span>
+          <div class="qty-box" style="margin-top:0;">
+            <button type="button" onclick="changeQty(${idx}, -1)">−</button>
+            <span>${item.qty}</span>
+            <button type="button" onclick="changeQty(${idx}, 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openCODCheckout() {
+      if (cart.length === 0) {
+        showToast('Please add an item to your bag first');
+        return;
+      }
+      closeAllOverlays(false);
+      renderCODBar();
+      updateCartUI();
+      document.getElementById('backdrop').classList.add('open');
+      document.getElementById('cod-modal').classList.add('open');
+    }
+
+    function submitCODOrder(e) {
+      e.preventDefault();
+      if (cart.length === 0) return;
+      const name = document.getElementById('cust-name').value.trim();
+      cart = [];
+      saveCart();
+      closeAllOverlays();
+      e.target.reset();
+      showToast(`Thank you, ${name}! Your Cash on Delivery order is confirmed.`);
+    }
+
+    function closeAllOverlays(hideBackdrop = true) {
+      if (hideBackdrop) document.getElementById('backdrop').classList.remove('open');
+      document.getElementById('pdp-modal').classList.remove('open');
+      document.getElementById('cod-modal').classList.remove('open');
+      document.getElementById('cart-drawer').classList.remove('open');
+    }
+
+    function toggleMobileMenu(open) {
+      document.getElementById('mobile-menu').classList.toggle('open', open);
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const input = document.getElementById('newsletter-email');
+      if (input.value.trim()) {
+        showToast('Welcome to the Alpha Tribe. Check your inbox for early access.');
+        input.value = '';
+      }
+    }
+
+    /* Chatbot Logic */
+    function toggleChat(forceState) {
+      const win = document.getElementById('chat-window');
+      if (typeof forceState === 'boolean') win.classList.toggle('open', forceState);
+      else win.classList.toggle('open');
+    }
+
+    function sendChatMessage(e) {
+      e.preventDefault();
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const box = document.getElementById('chat-messages');
+      box.innerHTML += `<div class="msg-user">${text.replace(/</g, '&lt;')}</div>`;
+      input.value = '';
+
+      const q = text.toLowerCase();
+      let reply = 'We offer Casual Shirts (₹1,299), Denim Jeans (₹1,499), Polo T-Shirts (₹899), Formal Shirts (₹1,399), and Round Neck Tees (₹599) with Pan-India Cash on Delivery.';
+      if (q.includes('shirt') && q.includes('formal')) reply = 'Our Light Blue Solid Formal Shirt (₹1,399) uses crisp two-ply cotton tailored for broad Indian shoulders.';
+      else if (q.includes('casual')) reply = 'Our Grey Checkered Casual Shirt (₹1,299) is cut from breathable cotton twill—ideal with light blue denim.';
+      else if (q.includes('jean') || q.includes('denim')) reply = 'Our Light Blue Regular Fit Jeans (₹1,499) feature mid-weight stretch denim engineered for athletic builds.';
+      else if (q.includes('polo')) reply = 'Our Solid Grey Polo T-Shirt (₹899) features an anti-curl collar and tailored sleeve fit.';
+      else if (q.includes('cod') || q.includes('cash') || q.includes('deliver')) reply = 'Cash on Delivery is available across India. Click any product, select Buy Now or Add to Cart, and enter your pincode and address.';
+      else if (q.includes('size') || q.includes('fit')) reply = 'Our garments are engineered for the Indian physique (sizes S to XXL) with extra shoulder room and a clean waist taper.';
+
+      setTimeout(() => {
+        box.innerHTML += `<div class="msg-bot">${reply}</div>`;
+        box.scrollTop = box.scrollHeight;
+      }, 250);
+    }
+
+    /* Navbar Scroll & Intersection Observer */
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    renderCollections();
+    updateCartUI();
+  </script>
+</body>
+</html>
