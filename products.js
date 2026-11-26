@@ -2,6 +2,26 @@
 // ALPHA TRIBE - PRODUCT CATALOG DATA STORE
 // ==========================================================================
 
+const IMG_POOL = {
+  casual1: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
+  casual2: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80',
+  casual3: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=800&q=80',
+  casual4: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=800&q=80',
+  casual5: 'https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=800&q=80',
+  casual6: 'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=800&q=80',
+  casual7: 'https://images.unsplash.com/photo-1604695573706-53170668f6a6?auto=format&fit=crop&w=800&q=80',
+  denim1: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80',
+  denim2: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?auto=format&fit=crop&w=800&q=80',
+  denim3: 'https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=800&q=80',
+  polo1: 'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80',
+  polo2: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80',
+  polo3: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80',
+  formal1: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80',
+  tee1: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80',
+  tee2: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80',
+  tee3: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80'
+};
+
 const PRODUCTS = [
   // --- CASUAL SHIRTS ---
   {
@@ -25,11 +45,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 7,
-    images: [
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.casual1, IMG_POOL.casual2, IMG_POOL.casual3]
   },
   {
     id: 'casual-2',
@@ -52,11 +68,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 4,
-    images: [
-      'https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.casual4, IMG_POOL.casual5, IMG_POOL.formal1]
   },
   {
     id: 'casual-3',
@@ -79,11 +91,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 9,
-    images: [
-      'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.casual6, IMG_POOL.casual1, IMG_POOL.casual2]
   },
   {
     id: 'casual-4',
@@ -106,11 +114,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     stock: 3,
-    images: [
-      'https://images.unsplash.com/photo-1604695573706-53170668f6a6?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.casual7, IMG_POOL.casual4, IMG_POOL.formal1]
   },
 
   // --- DENIM JEANS ---
@@ -134,11 +138,7 @@ const PRODUCTS = [
     ],
     sizes: ['30', '32', '34', '36', '38'],
     stock: 12,
-    images: [
-      'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1560243563-062bfc001d68?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.denim2, IMG_POOL.denim1, IMG_POOL.denim3]
   },
   {
     id: 'denim-2',
@@ -160,11 +160,7 @@ const PRODUCTS = [
     ],
     sizes: ['30', '32', '34', '36'],
     stock: 5,
-    images: [
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1560243563-062bfc001d68?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.denim1, IMG_POOL.denim2, IMG_POOL.denim3]
   },
   {
     id: 'denim-3',
@@ -186,11 +182,7 @@ const PRODUCTS = [
     ],
     sizes: ['30', '32', '34', '36', '38'],
     stock: 8,
-    images: [
-      'https://images.unsplash.com/photo-1560243563-062bfc001d68?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.denim3, IMG_POOL.denim1, IMG_POOL.denim2]
   },
   {
     id: 'denim-4',
@@ -212,11 +204,7 @@ const PRODUCTS = [
     ],
     sizes: ['30', '32', '34', '36'],
     stock: 6,
-    images: [
-      'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1560243563-062bfc001d68?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.denim2, IMG_POOL.denim3, IMG_POOL.denim1]
   },
 
   // --- POLO T-SHIRTS ---
@@ -241,11 +229,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 15,
-    images: [
-      'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1625910513413-722394747c34?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.polo1, IMG_POOL.polo2, IMG_POOL.polo3]
   },
   {
     id: 'polo-2',
@@ -267,11 +251,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 10,
-    images: [
-      'https://images.unsplash.com/photo-1625910513413-722394747c34?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.polo2, IMG_POOL.polo1, IMG_POOL.polo3]
   },
   {
     id: 'polo-3',
@@ -293,11 +273,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     stock: 8,
-    images: [
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1625910513413-722394747c34?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.polo3, IMG_POOL.polo1, IMG_POOL.polo2]
   },
   {
     id: 'polo-4',
@@ -319,11 +295,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 5,
-    images: [
-      'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1625910513413-722394747c34?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.polo1, IMG_POOL.polo3, IMG_POOL.polo2]
   },
 
   // --- FORMAL SHIRTS ---
@@ -348,11 +320,7 @@ const PRODUCTS = [
     ],
     sizes: ['38 (S)', '39 (M)', '40 (M-L)', '42 (L)', '44 (XL)'],
     stock: 14,
-    images: [
-      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.formal1, IMG_POOL.casual2, IMG_POOL.casual1]
   },
   {
     id: 'formal-2',
@@ -374,11 +342,7 @@ const PRODUCTS = [
     ],
     sizes: ['38 (S)', '39 (M)', '40 (M-L)', '42 (L)', '44 (XL)'],
     stock: 9,
-    images: [
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.casual2, IMG_POOL.formal1, IMG_POOL.casual1]
   },
   {
     id: 'formal-3',
@@ -400,11 +364,7 @@ const PRODUCTS = [
     ],
     sizes: ['38 (S)', '40 (M)', '42 (L)', '44 (XL)'],
     stock: 4,
-    images: [
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.casual1, IMG_POOL.formal1, IMG_POOL.casual2]
   },
   {
     id: 'formal-4',
@@ -426,11 +386,7 @@ const PRODUCTS = [
     ],
     sizes: ['38 (S)', '40 (M)', '42 (L)', '44 (XL)'],
     stock: 6,
-    images: [
-      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.formal1, IMG_POOL.casual2, IMG_POOL.casual1]
   },
 
   // --- ROUND NECK T-SHIRTS ---
@@ -455,11 +411,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 18,
-    images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.tee3, IMG_POOL.tee1, IMG_POOL.tee2]
   },
   {
     id: 'tees-2',
@@ -481,11 +433,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 22,
-    images: [
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.tee1, IMG_POOL.tee3, IMG_POOL.tee2]
   },
   {
     id: 'tees-3',
@@ -507,11 +455,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     stock: 14,
-    images: [
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.tee2, IMG_POOL.tee3, IMG_POOL.tee1]
   },
   {
     id: 'tees-4',
@@ -533,11 +477,7 @@ const PRODUCTS = [
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     stock: 7,
-    images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80'
-    ]
+    images: [IMG_POOL.tee3, IMG_POOL.tee2, IMG_POOL.tee1]
   }
 ];
 
